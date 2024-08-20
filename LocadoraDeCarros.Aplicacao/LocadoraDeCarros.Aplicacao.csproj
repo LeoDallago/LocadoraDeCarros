@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\LocadoraDeCarros.Dominio\LocadoraDeCarros.Dominio.csproj" />
+      <ProjectReference Include="..\LocadoraDeCarros.Infra\LocadoraDeCarros.Infra.csproj" />
+      <ProjectReference Include="..\LocadoraDeCarros.WebApp\LocadoraDeCarros.WebApp.csproj" />
+    </ItemGroup>
+
 </Project>

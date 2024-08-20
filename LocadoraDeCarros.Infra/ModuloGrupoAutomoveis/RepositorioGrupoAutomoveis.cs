@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 
-public class RepositorioGrupoAutomoveis : RepositorioBase<GrupoAutomoveis>, IRepositorio<GrupoAutomoveis>
+public class RepositorioGrupoAutomoveis : RepositorioBase<GrupoAutomoveis>, IRepositorioGrupoAutomoveis
 {
     public RepositorioGrupoAutomoveis(LocadoraDeCarrosDbContext dbContext) : base(dbContext)
     {
