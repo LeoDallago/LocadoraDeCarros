@@ -1,0 +1,22 @@
+﻿@model System.Collections.Generic.IEnumerable<LocadoraDeCarros.WebApp.Models.ListarGrupoAutomoveisViewModel>
+
+@{
+    ViewBag.Title = "Listar Grupos";
+}
+
+<h1 class="fs-5 mb-3">Grupos de Veiculos</h1>
+
+<a class="btn btn-dark" href="/grupoautomoveis/inserir">Inserir nova categoria</a>
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card col-2 m-3 p-2">
+            <div class="card-content"><strong>ID: </strong>@item.Id</div>
+            <div class="card-content"><strong>Grupo: </strong>@item.Grupo</div>
+            <a class="btn btn-dark btn-sm mb-2" href="/grupoautomoveis/excluir/@item.Id">Excluir</a>
+            <a class="btn btn-dark btn-sm mb-2" href="/grupoautomoveis/editar/@item.Id">Editar</a>
+        </div>
+    }
+</div>
+
+

@@ -1,3 +1,5 @@
+using System.Reflection;
+using LocadoraDeCarros.Aplicacao.Servicos;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.Compartilhado;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
@@ -11,8 +13,17 @@ builder.Services.AddControllersWithViews();
 #region Injecao de dependencias
 
 builder.Services.AddDbContext<LocadoraDeCarrosDbContext>();
+
 builder.Services.AddScoped<IRepositorioGrupoAutomoveis,RepositorioGrupoAutomoveis>();
 
+builder.Services.AddScoped<GrupoAutomoveisService>();
+
+
+
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddMaps(Assembly.GetExecutingAssembly());
+});
 #endregion
 
 

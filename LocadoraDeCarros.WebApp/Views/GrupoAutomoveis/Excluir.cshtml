@@ -1,0 +1,13 @@
+﻿@model DetalhesGrupoAutomoveisViewModel
+
+@{
+    ViewBag.Title = "Excluir Grupo de Automoveis";
+}
+
+<h2 class="fs-4 mb-3">Excluir Grupo de Veiculos</h2>
+
+<form class="d-block" asp-action="Excluir">
+    <h3 class="fs-semibold fs-5">Deseja Excluir o grupo <strong>@Model.Grupo</strong> ?</h3>
+        <button class="btn btn-danger col-2">Excluir</button>
+        <a class="btn btn-dark col-2" href="/grupoautomoveis/listar">Voltar</a>
+</form>

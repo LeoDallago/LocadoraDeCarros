@@ -1,0 +1,21 @@
+﻿@model InserirGrupoAutomoveisViewModel
+
+@{
+    ViewBag.Title = "Inserir grupo de automoveis";
+}
+
+<h1 class="fs-5 mb-3">Inserir Grupo de Veiculos</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="d-grid" asp-action="Inserir">
+                <label class="control-label fw-semibold">Grupo:</label>
+                <input class="form-control" asp-for="Grupo"/>
+                <span class="text-danger fs-6" asp-validation-for="Grupo"></span>
+                
+                <button class="btn btn-dark col-3 mt-2">Inserir</button>
+            </form>
+        </div>
+    </div>
+</div>

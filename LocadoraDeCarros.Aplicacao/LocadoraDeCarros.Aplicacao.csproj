@@ -9,7 +9,10 @@
     <ItemGroup>
       <ProjectReference Include="..\LocadoraDeCarros.Dominio\LocadoraDeCarros.Dominio.csproj" />
       <ProjectReference Include="..\LocadoraDeCarros.Infra\LocadoraDeCarros.Infra.csproj" />
-      <ProjectReference Include="..\LocadoraDeCarros.WebApp\LocadoraDeCarros.WebApp.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentResults" Version="3.16.0" />
     </ItemGroup>
 
 </Project>
