@@ -22,7 +22,7 @@ public class GrupoAutomoveisController : WebControllerBase
     public IActionResult Listar()
     {
         var resultado = _grupoAutomoveisService.SelecionarTodos();
-
+        
         var listaGrupos = resultado.Value;
 
         var listarGruposVm = _mapper.Map<IEnumerable<ListarGrupoAutomoveisViewModel>>(listaGrupos);
@@ -46,9 +46,16 @@ public class GrupoAutomoveisController : WebControllerBase
         
         var novoGrupo = _mapper.Map<GrupoAutomoveis>(grupoAutomoveisViewModel);
         
-        _grupoAutomoveisService.Inserir(novoGrupo.Grupo);
+        var resultado = _grupoAutomoveisService.Inserir(novoGrupo.Grupo);
 
-        ApresentarMensagemSucesso($"O registro {novoGrupo.Grupo} foi inserido com sucesso!");
+        if (resultado.IsFailed)
+        {
+            ApresentarMensagemFalha(resultado.ToResult());
+            
+            return RedirectToAction(nameof(Listar));
+        }
+
+        ApresentarMensagemSucesso($"O registro {novoGrupo.Grupo} foi INSERIDO com sucesso!");
 
         return RedirectToAction(nameof(Listar));
     }
@@ -56,6 +63,13 @@ public class GrupoAutomoveisController : WebControllerBase
     public IActionResult Excluir(int id)
     {
         var grupo = _grupoAutomoveisService.SelecionarPorId(id);
+        
+        if (grupo.IsFailed)
+        {
+            ApresentarMensagemFalha(grupo.ToResult());
+            
+            return RedirectToAction(nameof(Listar));
+        }
         
         var detalhesGrupoVm = _mapper.Map<DetalhesGrupoAutomoveisViewModel>(grupo.Value);
         
@@ -67,7 +81,14 @@ public class GrupoAutomoveisController : WebControllerBase
     {
         var grupo = _grupoAutomoveisService.Excluir(grupoAutomoveisViewModel.Id);
         
-        ApresentarMensagemSucesso($"O registro foi excluido com sucesso!");
+        if (grupo.IsFailed)
+        {
+            ApresentarMensagemFalha(grupo);
+            
+            return RedirectToAction(nameof(Listar));
+        }
+        
+        ApresentarMensagemSucesso($"O registro foi EXCLUIDO com sucesso!");
         return RedirectToAction(nameof(Listar));
     }
 
@@ -75,10 +96,17 @@ public class GrupoAutomoveisController : WebControllerBase
     public IActionResult Editar(int id)
     {
         var grupo = _grupoAutomoveisService.SelecionarPorId(id);
+
+        if (grupo.IsFailed)
+        {
+            ApresentarMensagemFalha(grupo.ToResult());
+            
+            return RedirectToAction(nameof(Listar));
+        }
         
         var editarGrupoVm = _mapper.Map<EditarGrupoAutomoveisViewModel>(grupo.Value);
         
-        ApresentarMensagemSucesso($"O registro {editarGrupoVm.Grupo} foi editado com sucesso!");
+        ApresentarMensagemSucesso($"O registro {editarGrupoVm.Grupo} foi EDITADO com sucesso!");
         
         return View(editarGrupoVm);
     }
@@ -93,7 +121,14 @@ public class GrupoAutomoveisController : WebControllerBase
 
         var editarGrupoVm = _mapper.Map<GrupoAutomoveis>(grupoAutomoveisViewModel);
 
-        _grupoAutomoveisService.Editar(editarGrupoVm.Id, editarGrupoVm.Grupo);
+       var resultado = _grupoAutomoveisService.Editar(editarGrupoVm.Id, editarGrupoVm.Grupo);
+
+       if (resultado.IsFailed)
+       {
+           ApresentarMensagemFalha(resultado.ToResult());
+           
+           return RedirectToAction(nameof(Listar));
+       }
         
         return RedirectToAction(nameof(Listar));
     }
