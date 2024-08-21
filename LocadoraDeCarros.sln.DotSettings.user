@@ -6,6 +6,8 @@
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.UnitTest1.Deve_Inserir_Grupo&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.UnitTest1.Deve_Atualizar_Grupo&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloGrupoAutomoveis.TestesIntegrados.Inserir_Grupo_Corretamente&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloAutomovel.TesteUnitario.Deve_Inserir_Veiculo&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloAutomovel.TesteUnitario.Deve_Editar_Veiculo&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;Category&gt;Integrados Grupo Automoveis&lt;/Category&gt;&#xD;
   &lt;/Or&gt;&#xD;
