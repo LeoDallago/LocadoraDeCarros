@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using LocadoraDeCarros.Aplicacao.Servicos;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
+using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
+using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
-public class GrupoAutomoveisController : Controller
+public class GrupoAutomoveisController : WebControllerBase
 {
     private readonly GrupoAutomoveisService _grupoAutomoveisService;
     private readonly IMapper _mapper;
@@ -24,7 +26,10 @@ public class GrupoAutomoveisController : Controller
         var listaGrupos = resultado.Value;
 
         var listarGruposVm = _mapper.Map<IEnumerable<ListarGrupoAutomoveisViewModel>>(listaGrupos);
-        
+
+
+        ViewBag.Mensagem = TempData.DesserializarMensagemViewModel();
+
         return View(listarGruposVm);
     }
 
@@ -43,6 +48,8 @@ public class GrupoAutomoveisController : Controller
         
         _grupoAutomoveisService.Inserir(novoGrupo.Grupo);
 
+        ApresentarMensagemSucesso($"O registro {novoGrupo.Grupo} foi inserido com sucesso!");
+
         return RedirectToAction(nameof(Listar));
     }
 
@@ -60,6 +67,7 @@ public class GrupoAutomoveisController : Controller
     {
         var grupo = _grupoAutomoveisService.Excluir(grupoAutomoveisViewModel.Id);
         
+        ApresentarMensagemSucesso($"O registro foi excluido com sucesso!");
         return RedirectToAction(nameof(Listar));
     }
 
@@ -69,6 +77,8 @@ public class GrupoAutomoveisController : Controller
         var grupo = _grupoAutomoveisService.SelecionarPorId(id);
         
         var editarGrupoVm = _mapper.Map<EditarGrupoAutomoveisViewModel>(grupo.Value);
+        
+        ApresentarMensagemSucesso($"O registro {editarGrupoVm.Grupo} foi editado com sucesso!");
         
         return View(editarGrupoVm);
     }
