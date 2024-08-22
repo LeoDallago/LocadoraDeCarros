@@ -16,9 +16,17 @@ public class Automovel : EntidadeBase
     public string CapacidadeCombustivel { get; set; }
     
     public string Ano { get; set; }
+
+    
+    #region Grupo automovel
+
+    public int GrupoId { get; set; }
     
     public GrupoAutomoveis Grupo { get; set; }
 
+    #endregion
+
+    
     public Automovel()
     {
         

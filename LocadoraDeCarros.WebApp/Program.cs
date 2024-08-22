@@ -1,8 +1,11 @@
 using System.Reflection;
 using LocadoraDeCarros.Aplicacao.Servicos;
+using LocadoraDeCarros.Dominio.ModuloAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.Compartilhado;
+using LocadoraDeCarros.Infra.ModuloAutomovel;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
+using Microsoft.Data.SqlClient;
 using GrupoAutomoveis = LocadoraDeCarros.Infra.Migrations.GrupoAutomoveis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,8 +16,9 @@ builder.Services.AddControllersWithViews();
 #region Injecao de dependencias
 
 builder.Services.AddDbContext<LocadoraDeCarrosDbContext>();
-
 builder.Services.AddScoped<IRepositorioGrupoAutomoveis,RepositorioGrupoAutomoveis>();
+builder.Services.AddScoped<IRepositorioAutomovel, RepositorioAutomovel>();
+
 
 builder.Services.AddScoped<GrupoAutomoveisService>();
 
