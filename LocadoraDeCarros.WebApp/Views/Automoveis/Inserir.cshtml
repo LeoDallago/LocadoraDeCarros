@@ -1,0 +1,48 @@
+﻿@model LocadoraDeCarros.WebApp.Models.InserirAutomovelViewModel?
+
+@{
+    ViewBag.Title = "Inserir Veiculo";
+
+}
+<h1 class="fs-5 mb-3">Inserir Veiculos</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="d-grid" asp-action="Inserir">
+                <label class="control-label fw-semibold">Marca:</label>
+                <input class="form-control" asp-for="Marca"/>
+                <span class="text-danger fs-6" asp-validation-for="Marca"></span>
+
+
+                <label class="control-label fw-semibold">Modelo:</label>
+                <input class="form-control" asp-for="Modelo"/>
+                <span class="text-danger fs-6" asp-validation-for="Modelo"></span>
+
+                <label class="control-label fw-semibold">Cor:</label>
+                <input class="form-control" asp-for="Cor"/>
+                <span class="text-danger fs-6" asp-validation-for="Cor"></span>
+
+                <label class="control-label fw-semibold">Tipo de Combustivel:</label>
+                <input class="form-control" asp-for="TipoCombustivel"/>
+                <span class="text-danger fs-6" asp-validation-for="TipoCombustivel"></span>
+
+                <label class="control-label fw-semibold">Capacidade de combustivel:</label>
+                <input class="form-control" asp-for="CapacidadeCombustivel"/>
+                <span class="text-danger fs-6" asp-validation-for="CapacidadeCombustivel"></span>
+
+                <label class="control-label fw-semibold">Ano:</label>
+                <input class="form-control" asp-for="Ano"/>
+                <span class="text-danger fs-6" asp-validation-for="Ano"></span>
+
+                <label class="control-label fw-semibold mb-1">Grupo</label>
+                <select class="form-select" asp-for="GrupoId" asp-items="Model.Grupos">
+                    <option disabled>Selecione um grupo</option>
+                </select>
+                <span class="text-danger fs-6" asp-validation-for="GrupoId"></span>
+                
+                <button class="btn btn-dark col-3 mt-2">Inserir</button>
+            </form>
+        </div>
+    </div>
+</div>

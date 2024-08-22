@@ -1,0 +1,23 @@
+﻿@model DetalhesAutomovelViewModel
+
+@{
+    ViewBag.Title = "Detalhes do Automovel";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-3 p-3 text-center">
+            <div class="card-content"><strong>Id: </strong>@Model.Id</div>
+            <div class="card-content"><strong>Marca: </strong>@Model.Marca</div>
+            <div class="card-content"><strong>Modelo: </strong>@Model.Modelo</div>
+            <div class="card-content"><strong>Cor: </strong>@Model.Cor</div>
+            <div class="card-content"><strong>Ano: </strong>@Model.Ano</div>
+            <div class="card-content"><strong>Tipo de Combustivel: </strong>@Model.TipoCombustivel</div>
+            <div class="card-content"><strong>Capacidade de Combustivel: </strong>@Model.CapacidadeCombustivel</div>
+            <div class="card-content"><strong>Grupo: </strong>@Model.GrupoId</div>
+
+            <a class="btn btn-dark btn-sm mb-2 mt-2" href="/automoveis/excluir/@Model.Id">Excluir</a>
+            <a class="btn btn-dark btn-sm mb-2" href="/automoveis/editar/@Model.Id">Editar</a>
+        </div>
+    </div>
+</div>

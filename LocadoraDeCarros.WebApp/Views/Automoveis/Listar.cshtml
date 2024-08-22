@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ListarAutomovelViewModel>
+
+@{
+    ViewBag.Title = "Listar Veiculo";
+  
+}
+<h1 class="fs-5 mb-3">Veiculos</h1>
+
+<a class="btn btn-dark" href="/automoveis/inserir">Inserir novo veiculo</a>
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card col-2 m-3 p-2">
+            <div class="card-content"><strong>Marca: </strong>@item.Marca</div>
+            <div class="card-content"><strong>Modelo: </strong>@item.Modelo</div>
+            <div class="card-content"><strong>Cor: </strong>@item.Cor</div>
+            <div class="card-content"><strong>Grupo: </strong>@item.GrupoId</div>
+            
+            <a class="btn btn-dark btn-sm mb-2" href="/automoveis/excluir/@item.Id">Excluir</a>
+            <a class="btn btn-dark btn-sm mb-2" href="/automoveis/editar/@item.Id">Editar</a> 
+            <a class="btn btn-dark btn-sm mb-2" href="/automoveis/detalhes/@item.Id">Detalhes</a> 
+        </div>
+    }
+</div>

@@ -16,8 +16,7 @@ public class AutomoveisService
     }
 
 
-    public Result<Automovel> Inserir(string marca, string modelo, string cor, string tipoCombustivel,
-        string capacidadeCombustivel, string ano, int grupoId)
+    public Result<Automovel> Inserir(Automovel automovel, int grupoId)
     {
         var grupoSelecionado = _repositorioGrupoAutomoveis.SelecionarPorId(grupoId);
 
@@ -26,21 +25,14 @@ public class AutomoveisService
             return Result.Fail("Grupo nao encontrado!");
         }
         
-        var automovel = new Automovel(marca,
-            modelo,
-            cor,
-            tipoCombustivel,
-            capacidadeCombustivel,
-            ano,
-            grupoSelecionado);
+        automovel.Grupo = grupoSelecionado;
         
         _repositorioAutomovel.Inserir(automovel);
         
         return Result.Ok(automovel);
     }
     
-    public Result<Automovel> Editar(int automovelId,string marca, string modelo, string cor, string tipoCombustivel,
-        string capacidadeCombustivel, string ano, int grupoId)
+    public Result<Automovel> Editar(int automovelId,Automovel automovel, int grupoId)
     {
         var automovelSelecionado = _repositorioAutomovel.SelecionarPorId(automovelId);
         
@@ -56,12 +48,12 @@ public class AutomoveisService
             return Result.Fail("Grupo nao encontrado!");
         }
         
-        automovelSelecionado.Marca = marca;
-        automovelSelecionado.Modelo = modelo;
-        automovelSelecionado.Cor = cor;
-        automovelSelecionado.TipoCombustivel = tipoCombustivel;
-        automovelSelecionado.CapacidadeCombustivel = capacidadeCombustivel;
-        automovelSelecionado.Ano = ano;
+        automovelSelecionado.Marca = automovel.Marca;
+        automovelSelecionado.Modelo = automovel.Modelo;
+        automovelSelecionado.Cor = automovel.Cor;
+        automovelSelecionado.TipoCombustivel = automovel.TipoCombustivel;
+        automovelSelecionado.CapacidadeCombustivel = automovel.CapacidadeCombustivel;
+        automovelSelecionado.Ano = automovel.Ano;
         automovelSelecionado.Grupo = grupoSelecionado;
         
         _repositorioAutomovel.Editar(automovelSelecionado);
@@ -96,9 +88,9 @@ public class AutomoveisService
         return Result.Ok(automovelSelecionado);
     }
 
-    public Result<List<GrupoAutomoveis>> SelecionarTodos()
+    public Result<List<Automovel>> SelecionarTodos()
     {
-        var automoveis = _repositorioGrupoAutomoveis.SelecionarTodos();
+        var automoveis = _repositorioAutomovel.SelecionarTodos();
         
         return Result.Ok(automoveis);
     }

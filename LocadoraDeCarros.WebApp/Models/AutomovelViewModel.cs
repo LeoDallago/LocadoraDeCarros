@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LocadoraDeCarros.WebApp.Models;
@@ -55,6 +56,8 @@ public class EditarAutomovelViewModel
 
 public class ListarAutomovelViewModel
 {
+    public int Id { get; set; }
+    
     public string Marca { get; set; }
     
     public string Modelo { get; set; }
@@ -72,6 +75,8 @@ public class ListarAutomovelViewModel
 
 public class DetalhesAutomovelViewModel
 {
+    public int Id { get; set; }
+    
     public string Marca { get; set; }
     
     public string Modelo { get; set; }
