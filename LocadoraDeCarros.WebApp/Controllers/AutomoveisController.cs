@@ -15,13 +15,14 @@ public class AutomoveisController : WebControllerBase
     private readonly AutomoveisService _repositorioAutomovel;
     private readonly GrupoAutomoveisService _repositorioGrupoAutomoveis;
     private readonly IMapper _mapper;
+    private string _filePath;
 
-
-    public AutomoveisController(AutomoveisService repositorioAutomovel, GrupoAutomoveisService repositorioGrupoAutomoveis, IMapper mapper)
+    public AutomoveisController(AutomoveisService repositorioAutomovel, GrupoAutomoveisService repositorioGrupoAutomoveis, IMapper mapper, IWebHostEnvironment env)
     {
         _repositorioAutomovel = repositorioAutomovel;
         _repositorioGrupoAutomoveis = repositorioGrupoAutomoveis;
         _mapper = mapper;
+        _filePath = env.WebRootPath;
     }
 
     public IActionResult Listar()
@@ -43,14 +44,18 @@ public class AutomoveisController : WebControllerBase
     }
 
     [HttpPost]
-    public IActionResult Inserir(InserirAutomovelViewModel inserirAutomovelViewModel)
+    public async Task<IActionResult> Inserir(InserirAutomovelViewModel inserirAutomovelViewModel)
     {
         if (!ModelState.IsValid)
         {
             return View(inserirAutomovelViewModel);
         }
+
+        var fotoSalva = await SalvarArquivo(inserirAutomovelViewModel.Foto);
         
         var novoAutomovel = _mapper.Map<Automovel>(inserirAutomovelViewModel);
+        
+        novoAutomovel.Foto = fotoSalva;
         
         int grupoId = inserirAutomovelViewModel.GrupoId;
         
@@ -60,6 +65,7 @@ public class AutomoveisController : WebControllerBase
         
         return RedirectToAction(nameof(Listar));
     }
+
 
     public IActionResult Editar(int id)
     {
@@ -152,6 +158,24 @@ public class AutomoveisController : WebControllerBase
             new SelectListItem(g.Grupo.ToString(),g.Id.ToString()));
         
         return editarAutomovelViewModel;
+    }
+    
+    private async Task<string> SalvarArquivo(IFormFile foto)
+    {
+        var nome = Guid.NewGuid() + foto.FileName;
+        
+        var filePath = _filePath + "\\fotos";
+        if (!Directory.Exists(filePath))
+        {
+            Directory.CreateDirectory(filePath);
+        }
+
+        using (var stream = System.IO.File.Create(filePath + "\\" + nome))
+        {
+            await foto.CopyToAsync(stream);
+        }
+        
+        return nome;
     }
 
     #endregion

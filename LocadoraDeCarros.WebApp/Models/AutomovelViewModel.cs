@@ -6,6 +6,7 @@ namespace LocadoraDeCarros.WebApp.Models;
 
 public class InserirAutomovelViewModel
 {
+    public IFormFile Foto { get; set; }
     public string Marca { get; set; }
     
     [Required(ErrorMessage = "O nome do veiculo é obrigatório")]
@@ -31,6 +32,8 @@ public class InserirAutomovelViewModel
 public class EditarAutomovelViewModel
 {
     public int Id { get; set; }
+    
+    public string Foto  { get; set; }
     
     public string Marca { get; set; }
     
@@ -75,6 +78,8 @@ public class ListarAutomovelViewModel
 
 public class DetalhesAutomovelViewModel
 {
+    public string Foto  { get; set; }
+    
     public int Id { get; set; }
     
     public string Marca { get; set; }

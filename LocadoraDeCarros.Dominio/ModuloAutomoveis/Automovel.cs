@@ -5,6 +5,9 @@ namespace LocadoraDeCarros.Dominio.ModuloAutomoveis;
 
 public class Automovel : EntidadeBase
 {
+
+    public string Foto { get; set; }
+    
     public string Marca { get; set; }
     
     public string Modelo { get; set; }
@@ -40,6 +43,19 @@ public class Automovel : EntidadeBase
         TipoCombustivel = tipoCombustivel;
         CapacidadeCombustivel = capacidadeCombustivel;
         Ano = ano;
+        Grupo = grupo;
+    }
+    
+    public Automovel(string foto, string marca, string modelo, string cor, string tipoCombustivel, string capacidadeCombustivel, string ano, int grupoId, GrupoAutomoveis grupo)
+    {
+        Foto = foto;
+        Marca = marca;
+        Modelo = modelo;
+        Cor = cor;
+        TipoCombustivel = tipoCombustivel;
+        CapacidadeCombustivel = capacidadeCombustivel;
+        Ano = ano;
+        GrupoId = grupoId;
         Grupo = grupo;
     }
 }

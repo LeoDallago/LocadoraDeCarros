@@ -6,7 +6,7 @@ using LocadoraDeCarros.Infra.Compartilhado;
 using LocadoraDeCarros.Infra.ModuloAutomovel;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 using Microsoft.Data.SqlClient;
-using GrupoAutomoveis = LocadoraDeCarros.Infra.Migrations.GrupoAutomoveis;
+using GrupoAutomoveis = LocadoraDeCarros.Infra.Migrations.Initial;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -15,6 +15,10 @@ public class MapeadorAutomovel : IEntityTypeConfiguration<Automovel>
             .IsRequired()
             .ValueGeneratedOnAdd();
         
+        builder.Property(v => v.Foto)
+            .IsRequired()
+            .HasColumnType("varchar(250)");
+        
         builder.Property(v => v.Marca)
             .HasColumnType("varchar(150)");
         

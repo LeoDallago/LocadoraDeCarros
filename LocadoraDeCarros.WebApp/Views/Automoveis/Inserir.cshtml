@@ -9,7 +9,10 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <form class="d-grid" asp-action="Inserir">
+            <form class="d-grid" enctype="multipart/form-data" asp-action="Inserir">
+                <label class="control-label fw-semibold">Foto</label>
+                <input class="form-control" type="file" asp-for="Foto"/>
+                
                 <label class="control-label fw-semibold">Marca:</label>
                 <input class="form-control" asp-for="Marca"/>
                 <span class="text-danger fs-6" asp-validation-for="Marca"></span>
@@ -40,7 +43,7 @@
                     <option disabled>Selecione um grupo</option>
                 </select>
                 <span class="text-danger fs-6" asp-validation-for="GrupoId"></span>
-                
+
                 <button class="btn btn-dark col-3 mt-2">Inserir</button>
             </form>
         </div>
