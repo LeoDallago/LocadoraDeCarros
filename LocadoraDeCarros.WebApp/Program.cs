@@ -21,7 +21,7 @@ builder.Services.AddScoped<IRepositorioAutomovel, RepositorioAutomovel>();
 
 
 builder.Services.AddScoped<GrupoAutomoveisService>();
-
+builder.Services.AddScoped<AutomoveisService>();
 
 
 builder.Services.AddAutoMapper(cfg =>
