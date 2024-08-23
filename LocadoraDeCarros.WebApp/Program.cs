@@ -1,4 +1,5 @@
 using System.Reflection;
+using LocadoraDeCarros.Aplicacao;
 using LocadoraDeCarros.Aplicacao.Servicos;
 using LocadoraDeCarros.Dominio.ModuloAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
@@ -24,7 +25,7 @@ builder.Services.AddScoped<IRepositorioPlanos, RepositorioPlanos>();
 
 builder.Services.AddScoped<GrupoAutomoveisService>();
 builder.Services.AddScoped<AutomoveisService>();
-
+builder.Services.AddScoped<PlanosService>();
 
 builder.Services.AddAutoMapper(cfg =>
 {
