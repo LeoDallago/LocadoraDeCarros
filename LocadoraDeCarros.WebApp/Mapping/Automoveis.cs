@@ -10,8 +10,8 @@ public class Automoveis : Profile
     {
         CreateMap<InserirAutomovelViewModel, Automovel>()
             .ForMember(dest => dest.Foto, opt => opt.Ignore());
-        CreateMap<EditarAutomovelViewModel, Automovel>();
-
+        CreateMap<EditarAutomovelViewModel, Automovel>()
+            .ForMember(dest => dest.Foto, opt => opt.Ignore());
         CreateMap<Automovel, EditarAutomovelViewModel>();
         CreateMap<Automovel, ListarAutomovelViewModel>();
         CreateMap<Automovel, DetalhesAutomovelViewModel>();

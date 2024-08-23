@@ -33,8 +33,6 @@ public class EditarAutomovelViewModel
 {
     public int Id { get; set; }
     
-    public string Foto  { get; set; }
-    
     public string Marca { get; set; }
     
     [Required(ErrorMessage = "O nome do veiculo é obrigatório")]

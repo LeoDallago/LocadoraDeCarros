@@ -77,7 +77,7 @@ public class AutomoveisController : WebControllerBase
     }
 
     [HttpPost]
-    public IActionResult Editar(EditarAutomovelViewModel editarAutomovelViewModel)
+    public async Task<IActionResult> Editar(EditarAutomovelViewModel editarAutomovelViewModel)
     {
         if (!ModelState.IsValid)
         {
@@ -85,6 +85,7 @@ public class AutomoveisController : WebControllerBase
         }
         
         var editarAutomovelVm = _mapper.Map<Automovel>(editarAutomovelViewModel);
+        
         
         var resultado = _repositorioAutomovel.Editar(editarAutomovelViewModel.Id, editarAutomovelVm,editarAutomovelVm.GrupoId);
 
