@@ -49,9 +49,38 @@ namespace LocadoraDeCarros.Infra.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "TBPlanos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Plano = table.Column<string>(type: "varchar(100)", nullable: false),
+                    PrecoDiaria = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    PrecoKm = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
+                    KmDisponivel = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    KmExtrapolado = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    GrupoId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TBPlanos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TBPlanos_TBGrupoAutomoveis_GrupoId",
+                        column: x => x.GrupoId,
+                        principalTable: "TBGrupoAutomoveis",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_TBAutomovel_GrupoId",
                 table: "TBAutomovel",
+                column: "GrupoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TBPlanos_GrupoId",
+                table: "TBPlanos",
                 column: "GrupoId");
         }
 
@@ -60,6 +89,9 @@ namespace LocadoraDeCarros.Infra.Migrations
         {
             migrationBuilder.DropTable(
                 name: "TBAutomovel");
+
+            migrationBuilder.DropTable(
+                name: "TBPlanos");
 
             migrationBuilder.DropTable(
                 name: "TBGrupoAutomoveis");

@@ -95,25 +95,21 @@ namespace LocadoraDeCarros.Infra.Migrations
                     b.Property<int>("GrupoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("KmDisponivel")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<decimal>("KmDisponivel")
+                        .HasColumnType("decimal(10,2)");
 
-                    b.Property<string>("KmExtrapolado")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<decimal>("KmExtrapolado")
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("Plano")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("PrecoDiaria")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<decimal>("PrecoDiaria")
+                        .HasColumnType("decimal(10,2)");
 
-                    b.Property<string>("PrecoKm")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<decimal>("PrecoKm")
+                        .HasColumnType("decimal(5,2)");
 
                     b.HasKey("Id");
 

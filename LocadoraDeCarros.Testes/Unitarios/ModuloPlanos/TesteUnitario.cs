@@ -16,7 +16,7 @@ public class TesteUnitario
         Planos plano;
         
         //Act
-        plano = new Planos("Diario","50","5",2,grupo);
+        plano = new Planos("Diario",50,5,2,grupo);
         
         //Assert
         Assert.AreEqual(plano.Plano, "Diario");
@@ -28,12 +28,12 @@ public class TesteUnitario
         //Arrange
         var grupo = new GrupoAutomoveis("SUV");
         Planos plano;
-        plano = new Planos("Diario","50","5",2,grupo);
+        plano = new Planos("Diario",50,5,2,grupo);
         
         //Act
-        plano.PrecoDiaria = "75";
+        plano.PrecoDiaria = 75;
         
         //Assert
-        Assert.AreNotEqual(plano.PrecoDiaria,"50");
+        Assert.AreNotEqual(plano.PrecoDiaria,50);
     }
 }

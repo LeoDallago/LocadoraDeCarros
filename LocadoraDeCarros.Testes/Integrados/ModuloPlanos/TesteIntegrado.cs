@@ -31,7 +31,7 @@ public class TesteIntegrado
         //Arrange
         var grupo = new GrupoAutomoveis("grupoteste");
         _repositorioGrupoAutomoveis.Inserir(grupo);
-        var plano = new Planos("diario","50","5",grupo.Id,grupo);
+        var plano = new Planos("diario",50,5,grupo.Id,grupo);
         
         //Act
         _repositorioPlanos.Inserir(plano);
@@ -47,15 +47,15 @@ public class TesteIntegrado
         var grupo = new GrupoAutomoveis("grupoteste");
         _repositorioGrupoAutomoveis.Inserir(grupo);
         
-        var plano = new Planos("diario","50","5",grupo.Id,grupo);
+        var plano = new Planos("diario",50,5,grupo.Id,grupo);
         _repositorioPlanos.Inserir(plano);
         
-        plano.PrecoDiaria = "75";
+        plano.PrecoDiaria = 75;
         //Act
         _repositorioPlanos.Editar(plano);
         
         //Assert
-        Assert.AreNotEqual(plano.PrecoDiaria, "50");
+        Assert.AreNotEqual(plano.PrecoDiaria, 50);
     }
 
     [TestMethod]
@@ -66,7 +66,7 @@ public class TesteIntegrado
         var grupo = new GrupoAutomoveis("grupoteste");
         _repositorioGrupoAutomoveis.Inserir(grupo);
         
-        var plano = new Planos("diario","50","5",grupo.Id,grupo);
+        var plano = new Planos("diario",50,5,grupo.Id,grupo);
         _repositorioPlanos.Inserir(plano);
         
         //Act

@@ -7,13 +7,13 @@ public class Planos : EntidadeBase
 {
     public string Plano { get; set; }
     
-    public string PrecoDiaria { get; set; }
+    public decimal PrecoDiaria { get; set; }
     
-    public string PrecoKm { get; set; }
+    public decimal PrecoKm { get; set; }
     
-    public string KmDisponivel { get; set; }
+    public decimal KmDisponivel { get; set; }
     
-    public string KmExtrapolado { get; set; }
+    public decimal KmExtrapolado { get; set; }
     
     public int GrupoId { get; set; }
     
@@ -27,8 +27,8 @@ public class Planos : EntidadeBase
 
     public Planos(
         string plano,
-        string precoDiaria,
-        string precoKm,
+        decimal precoDiaria,
+        decimal precoKm,
         int grupoId,
         GrupoAutomoveis grupo
         )
@@ -42,9 +42,9 @@ public class Planos : EntidadeBase
 
     public Planos(
         string plano,
-        string precoDiaria,
-        string kmDisponivel,
-        string kmExtrapolado,
+        decimal precoDiaria,
+        decimal kmDisponivel,
+        decimal kmExtrapolado,
         int grupoId,
         GrupoAutomoveis grupo
         )
@@ -59,10 +59,10 @@ public class Planos : EntidadeBase
 
     public Planos(
         string plano,
-        string precoDiaria,
-        string precoKm,
-        string kmDisponivel,
-        string kmExtrapolado,
+        decimal precoDiaria,
+        decimal precoKm,
+        decimal kmDisponivel,
+        decimal kmExtrapolado,
         int grupoId,
         GrupoAutomoveis grupo
         )

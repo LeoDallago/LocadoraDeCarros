@@ -20,16 +20,16 @@ public class MapeadorPlanos : IEntityTypeConfiguration<Planos>
         
         builder.Property(p => p.PrecoDiaria)
             .IsRequired()
-            .HasColumnType("varchar(100)");
+            .HasColumnType("decimal(10,2)");
         
         builder.Property(p => p.PrecoKm)
-            .HasColumnType("varchar(100)");
+            .HasColumnType("decimal(5,2)");
         
         builder.Property(p => p.KmDisponivel)
-            .HasColumnType("varchar(100)");
+            .HasColumnType("decimal(10,2)");
 
         builder.Property(p => p.KmExtrapolado)
-            .HasColumnType("varchar(100)");
+            .HasColumnType("decimal(10,2)");
 
         builder.HasOne(p => p.Grupo)
             .WithMany()
