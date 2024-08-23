@@ -1,7 +1,9 @@
 ﻿using LocadoraDeCarros.Dominio.ModuloAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
+using LocadoraDeCarros.Dominio.ModuloPlanos;
 using LocadoraDeCarros.Infra.ModuloAutomovel;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
+using LocadoraDeCarros.Infra.ModuloPlanos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -12,6 +14,8 @@ public class LocadoraDeCarrosDbContext : DbContext
     public DbSet<GrupoAutomoveis> grupoAutomoveis { get; set; }
 
     public DbSet<Automovel> Automovel { get; set; }
+    
+    public DbSet<Planos> Planos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -34,6 +38,7 @@ public class LocadoraDeCarrosDbContext : DbContext
     {
         modelBuilder.ApplyConfiguration(new MapeadorGrupoAutomoveis());
         modelBuilder.ApplyConfiguration(new MapeadorAutomovel());
+        modelBuilder.ApplyConfiguration(new MapeadorPlanos());
         base.OnModelCreating(modelBuilder);
     }
 }
