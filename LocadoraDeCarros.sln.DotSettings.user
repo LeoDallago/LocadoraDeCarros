@@ -14,6 +14,8 @@
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloAutomoveis.TesteIntegrado.Deve_Inserir_Automovel&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloAutomoveis.TesteIntegrado.Deve_Atualizar_Automovel&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloAutomoveis.TesteIntegrado.Deve_Excluir_Automovel&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloPlanos.TesteUnitario.Deve_Inserir_Plano&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloPlanos.TesteUnitario.Deve_Editar_Plano&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;Category&gt;Integrados Grupo Automoveis&lt;/Category&gt;&#xD;
   &lt;/Or&gt;&#xD;
