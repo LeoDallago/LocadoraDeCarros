@@ -37,8 +37,6 @@ builder.Services.AddAutoMapper(cfg =>
 });
 #endregion
 
-
-
 var app = builder.Build();
 
 app.UseHttpsRedirection();

@@ -6,12 +6,13 @@ namespace LocadoraDeCarros.Aplicacao.Servicos;
 
 public class TaxaService
 {
-    private readonly RepositorioTaxa _repositorioTaxa;
+    private readonly IRepositorioTaxa _repositorioTaxa;
 
-    public TaxaService(RepositorioTaxa repositorioTaxa)
+    public TaxaService(IRepositorioTaxa repositorioTaxa)
     {
         _repositorioTaxa = repositorioTaxa;
     }
+
 
     public Result<Taxa> Inserir(Taxa taxa)
     {

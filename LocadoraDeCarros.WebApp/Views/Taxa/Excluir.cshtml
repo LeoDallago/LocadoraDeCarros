@@ -1,0 +1,11 @@
+﻿@model ListarTaxaViewModel
+
+@{
+    ViewBag.Title = "Excluir Taxa ou Serviço";
+}
+
+<form class="d-block" asp-action="Excluir">
+    <h3 class="fs-semibold fs-5">Deseja Excluir <strong>@Model.Nome</strong> ?</h3>
+    <button class="btn btn-danger col-2">Excluir</button>
+    <a class="btn btn-dark col-2" href="/taxa/listar">Voltar</a>
+</form>

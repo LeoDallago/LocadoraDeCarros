@@ -1,0 +1,22 @@
+﻿@model System.Collections.Generic.IEnumerable<LocadoraDeCarros.WebApp.Models.ListarTaxaViewModel>
+
+@{
+    ViewBag.Title = "Listar Taxas e Serviços";
+}
+
+<a class="btn btn-dark" href="/taxa/inserir">Inserir nova taxa ou serviço</a>
+
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card col-2 m-3 p-2">
+            <div class="card-content"><strong>ID: </strong>@item.Id</div>
+            <div class="card-content"><strong>Nome: </strong>@item.Nome</div>
+            <div class="card-content"><strong>Preço: </strong>@item.Preco</div>
+            <div class="card-content"><strong>Plano: </strong>@item.PlanoCobranca</div>
+            
+            <a class="btn btn-dark btn-sm mb-2" href="/taxa/editar/@item.Id">Editar</a>
+            <a class="btn btn-dark btn-sm mb-2" href="/taxa/excluir/@item.Id">Excluir</a>
+        </div>
+    }
+</div>

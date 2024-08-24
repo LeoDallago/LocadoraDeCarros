@@ -1,0 +1,30 @@
+﻿@model InserirTaxaViewModel
+
+@{
+    ViewBag.Title = "Inserir Taxa ou Serviço";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="d-grid" asp-action="Inserir">
+                <label class="control-label fw-semibold">Nome:</label>
+                <input class="form-control" asp-for="Nome"/>
+                <span class="text-danger fs-6" asp-validation-for="Nome"></span>
+
+                <label class="control-label fw-semibold">Preço:</label>
+                <input class="form-control" type="number" asp-for="Preco"/>
+                <span class="text-danger fs-6" asp-validation-for="Preco"></span>
+                
+                <label class="control-label fw-semibold">Plano de Cobrança</label>
+                <select class="form-select" asp-for="PlanoCobranca">
+                    <option>Preço fixo</option>
+                    <option>Cobrança Diaria</option>
+                </select>
+                <span class="text-danger fs-6" asp-validation-for="PlanoCobranca"></span>
+                
+                <button class="btn btn-dark col-3 mt-2">Inserir</button>
+            </form>
+        </div>
+    </div>
+</div>

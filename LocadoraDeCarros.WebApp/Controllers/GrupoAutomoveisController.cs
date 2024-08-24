@@ -106,8 +106,6 @@ public class GrupoAutomoveisController : WebControllerBase
         
         var editarGrupoVm = _mapper.Map<EditarGrupoAutomoveisViewModel>(grupo.Value);
         
-        ApresentarMensagemSucesso($"O registro {editarGrupoVm.Grupo} foi EDITADO com sucesso!");
-        
         return View(editarGrupoVm);
     }
 
@@ -129,7 +127,9 @@ public class GrupoAutomoveisController : WebControllerBase
            
            return RedirectToAction(nameof(Listar));
        }
-        
+       
+       ApresentarMensagemSucesso($"O registro {editarGrupoVm.Grupo} foi EDITADO com sucesso!");
+       
         return RedirectToAction(nameof(Listar));
     }
 }
