@@ -8,13 +8,13 @@ public class InserirPlanoViewModel
     [Required(ErrorMessage = "O Plano é obrigatório")]
     public string Plano { get; set; }
     
-    public string PrecoDiaria { get; set; }
+    public decimal PrecoDiaria { get; set; }
     
-    public string PrecoKm { get; set; }
+    public decimal PrecoKm { get; set; }
     
-    public string KmDisponivel { get; set; }
+    public decimal KmDisponivel { get; set; }
     
-    public string KmExtrapolado { get; set; }
+    public decimal KmExtrapolado { get; set; }
     
     public int GrupoId { get; set; }
     
@@ -28,13 +28,13 @@ public class EditarPlanoViewModel
     [Required(ErrorMessage = "O Plano é obrigatório")]
     public string Plano { get; set; }
     
-    public string PrecoDiaria { get; set; }
+    public decimal PrecoDiaria { get; set; }
     
-    public string PrecoKm { get; set; }
+    public decimal PrecoKm { get; set; }
     
-    public string KmDisponivel { get; set; }
+    public decimal KmDisponivel { get; set; }
     
-    public string KmExtrapolado { get; set; }
+    public decimal KmExtrapolado { get; set; }
     
     public int GrupoId { get; set; }
     
@@ -47,13 +47,13 @@ public class ListarPlanoViewModel
     
     public string Plano { get; set; }
     
-    public string PrecoDiaria { get; set; }
+    public decimal PrecoDiaria { get; set; }
     
-    public string PrecoKm { get; set; }
+    public decimal PrecoKm { get; set; }
     
-    public string KmDisponivel { get; set; }
+    public decimal KmDisponivel { get; set; }
     
-    public string KmExtrapolado { get; set; }
+    public decimal KmExtrapolado { get; set; }
     
     public int GrupoId { get; set; }
 }
@@ -64,13 +64,13 @@ public class DetalhesPlanoViewModel
     
     public string Plano { get; set; }
     
-    public string PrecoDiaria { get; set; }
+    public decimal PrecoDiaria { get; set; }
     
-    public string PrecoKm { get; set; }
+    public decimal PrecoKm { get; set; }
     
-    public string KmDisponivel { get; set; }
+    public decimal KmDisponivel { get; set; }
     
-    public string KmExtrapolado { get; set; }
+    public decimal KmExtrapolado { get; set; }
     
     public int GrupoId { get; set; }
 }

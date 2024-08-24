@@ -1,0 +1,21 @@
+﻿@model DetalhesPlanoViewModel
+
+@{
+    ViewBag.Title = "Detalhes do Plano";
+}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-3 p-3">
+            <div class="card-content"><strong>Id: </strong>@Model.Id</div>
+            <div class="card-content"><strong>Plano: </strong>@Model.Plano</div>
+            <div class="card-content"><strong>Preco Diaria: </strong>@Model.PrecoDiaria</div>
+            <div class="card-content"><strong>Preco KM: </strong>@Model.PrecoKm</div>
+            <div class="card-content"><strong>KM Disponivel: </strong>@Model.KmDisponivel</div>
+            <div class="card-content"><strong>KM Extrapolado </strong>@Model.KmExtrapolado</div>
+            <div class="card-content"><strong>Grupo: </strong>@Model.GrupoId</div>
+
+            <a class="btn btn-dark btn-sm mb-2 mt-2" href="/planos/excluir/@Model.Id">Excluir</a>
+            <a class="btn btn-dark btn-sm mb-2" href="/planos/editar/@Model.Id">Editar</a>
+        </div>
+    </div>
+</div>

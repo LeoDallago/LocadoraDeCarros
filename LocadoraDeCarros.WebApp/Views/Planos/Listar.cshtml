@@ -1,0 +1,23 @@
+﻿@model System.Collections.Generic.IEnumerable<LocadoraDeCarros.WebApp.Models.ListarPlanoViewModel>
+
+@{
+    ViewBag.Title = "Listar Planos";
+}
+
+<h1 class="fs-5 mb-3">Planos</h1>
+
+<a class="btn btn-dark" href="/planos/inserir">Inserir novo plano</a>
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card col-2 m-3 p-2">
+            <div class="card-content"><strong>Grupo: </strong>@item.GrupoId</div>
+            <div class="card-content"><strong>Plano: </strong>@item.Plano</div>
+            <div class="card-content"><strong>Preco da Diaria: </strong>@item.PrecoDiaria</div>
+            
+            <a class="btn btn-dark btn-sm mb-2" href="/planos/detalhes/@item.Id">Detalhes</a>
+            <a class="btn btn-dark btn-sm mb-2" href="/planos/editar/@item.Id">Editar</a> 
+            <a class="btn btn-dark btn-sm mb-2" href="/planos/excluir/@item.Id">Excluir</a>
+        </div>
+    }
+</div>

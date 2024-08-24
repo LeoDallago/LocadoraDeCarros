@@ -1,0 +1,38 @@
+﻿@model LocadoraDeCarros.WebApp.Models.EditarPlanoViewModel?
+
+@{
+    ViewBag.Title = "Editar planos";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-3 p-3 m-3">
+            <div class="card-content">
+                <div class="card-title">Editar Plano</div>
+                <form class="d-grid" asp-action="Editar">
+                    <input class="form-control" value="@Model.Plano" readonly="readonly" asp-for="Plano"/>
+                    
+                    <label class="control-label fw-semibold mb-1">Grupo</label>
+                    <select class="form-select mb-3" asp-for="GrupoId" asp-items="Model.Grupos">
+                        <option disabled>Selecione um grupo</option>
+                    </select>
+                    
+                    <label class="control-label fw-semibold">Diaria:</label>
+                    <input class="form-control" type="number" asp-for="PrecoDiaria"/>
+
+                    <label class="control-label fw-semibold">Preco por Km:</label>
+                    <input class="form-control" type="number" asp-for="PrecoKm"/>
+
+                    <label class="control-label fw-semibold">Km Disponivel:</label>
+                    <input class="form-control" type="number" asp-for="KmDisponivel"/>
+
+                    <label class="control-label fw-semibold">Preco por Km Extrapolado:</label>
+                    <input class="form-control" type="number" asp-for="KmExtrapolado"/>
+
+                    <button class="btn btn-dark col-3 mt-2">Inserir</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

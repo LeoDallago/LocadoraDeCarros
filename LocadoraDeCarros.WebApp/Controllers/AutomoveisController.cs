@@ -96,7 +96,7 @@ public class AutomoveisController : WebControllerBase
             return RedirectToAction(nameof(Listar));
         }
         
-        ApresentarMensagemSucesso($"Veiculo {editarAutomovelViewModel.Modelo} inserido com sucesso!");
+        ApresentarMensagemSucesso($"Veiculo {editarAutomovelViewModel.Modelo} EDITADO com sucesso!");
         
         return RedirectToAction(nameof(Listar));
     }

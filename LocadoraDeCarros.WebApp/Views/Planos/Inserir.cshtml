@@ -1,0 +1,75 @@
+﻿@model LocadoraDeCarros.WebApp.Models.InserirPlanoViewModel
+
+@{
+    ViewBag.Title = "Inserir Plano";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-3 p-3 m-3">
+            <div class="card-content">
+                <div class="card-title">Plano diario</div>
+                <form class="d-grid" asp-action="Inserir">
+                    <label class="control-label fw-semibold mb-1">Grupo</label>
+                    <select class="form-select mb-3" asp-for="GrupoId" asp-items="Model.Grupos">
+                        <option disabled>Selecione um grupo</option>
+                    </select>
+
+                    <input class="form-control" value="Plano Diario" type="hidden" asp-for="Plano"/>
+
+                    <label class="control-label fw-semibold">Diaria:</label>
+                    <input class="form-control" type="number" asp-for="PrecoDiaria"/>
+
+                    <label class="control-label fw-semibold">Preco por Km:</label>
+                    <input class="form-control" type="number" asp-for="PrecoKm"/>
+                    
+                    <button class="btn btn-dark col-3 mt-2">Inserir</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card col-3 p-3 m-3">
+            <div class="card-content">
+                <div class="card-title">Plano Controlado</div>
+                <form class="d-grid" asp-action="Inserir">
+                    <label class="control-label fw-semibold mb-1">Grupo</label>
+                    <select class="form-select mb-3" asp-for="GrupoId" asp-items="Model.Grupos">
+                        <option disabled>Selecione um grupo</option>
+                    </select>
+
+                    <input class="form-control" value="Plano controlado" type="hidden" asp-for="Plano"/>
+
+                    <label class="control-label fw-semibold">Km Disponivel:</label>
+                    <input class="form-control" type="number" asp-for="KmDisponivel"/>
+
+                    <label class="control-label fw-semibold">Preco Diaria:</label>
+                    <input class="form-control" type="number" asp-for="PrecoDiaria"/>    
+                    
+                    <label class="control-label fw-semibold">Preco por Km Extrapolado:</label>
+                    <input class="form-control" type="number" asp-for="KmExtrapolado"/>
+
+                    <button class="btn btn-dark col-3 mt-2">Inserir</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card col-3 p-3 m-3">
+            <div class="card-content">
+                <div class="card-title">Plano Livre</div>
+                <form class="d-grid" asp-action="Inserir">
+                    <label class="control-label fw-semibold mb-1">Grupo</label>
+                    <select class="form-select mb-3" asp-for="GrupoId" asp-items="Model.Grupos">
+                        <option disabled>Selecione um grupo</option>
+                    </select>
+
+                    <input class="form-control" value="Plano Livre" type="hidden" asp-for="Plano"/>
+
+                    <label class="control-label fw-semibold">Diaria:</label>
+                    <input class="form-control" type="number" asp-for="PrecoDiaria"/>
+
+                    <button class="btn btn-dark col-3 mt-2">Inserir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
