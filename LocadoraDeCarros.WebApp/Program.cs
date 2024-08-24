@@ -29,6 +29,7 @@ builder.Services.AddScoped<IRepositorioTaxa, RepositorioTaxa>();
 builder.Services.AddScoped<GrupoAutomoveisService>();
 builder.Services.AddScoped<AutomoveisService>();
 builder.Services.AddScoped<PlanosService>();
+builder.Services.AddScoped<TaxaService>();
 
 builder.Services.AddAutoMapper(cfg =>
 {
