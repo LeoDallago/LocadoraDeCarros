@@ -1,0 +1,25 @@
+﻿@model DetalhesClienteViewModel
+
+@{
+    ViewBag.Title = $"Detalhes do Cliente {Model.Nome}";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-4 m-3 p-4 fs-4">
+            <div class="card-content">ID: <strong>@Model.Id</strong></div>
+            <div class="card-content">Nome: <strong>@Model.Nome</strong></div>
+            <div class="card-content">Telefone: <strong>@Model.Telefone</strong></div>
+            <div class="card-content">Estado: <strong>@Model.Estado</strong></div>
+            <div class="card-content">Cidade: <strong>@Model.Cidade</strong></div>
+            <div class="card-content">Bairro: <strong>@Model.Bairro</strong></div>
+            <div class="card-content">Rua: <strong>@Model.Rua</strong></div>
+            <div class="card-content">Numero: <strong>@Model.Numero</strong></div>
+            <div class="card-content">Tipo: <strong>@Model.TipoCliente</strong></div>
+
+            <a class="btn btn-dark btn-sm mb-2 mt-2 fs-5" href="/cliente/editar/@Model.Id">Editar</a>
+            <a class="btn btn-dark btn-sm mb-2 fs-5" href="/cliente/excluir/@Model.Id">Excluir</a>
+        </div>
+
+    </div>
+</div>

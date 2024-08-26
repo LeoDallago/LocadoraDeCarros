@@ -1,0 +1,25 @@
+﻿@model System.Collections.Generic.IEnumerable<LocadoraDeCarros.WebApp.Models.ListarClienteViewModel>
+
+@{
+    ViewBag.Title = "Listar Clientes";
+}
+
+<h1 class="fs-5 mb-3">Clientes</h1>
+
+<a class="btn btn-dark" href="/cliente/inserir">Inserir novo cliente</a>
+
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+    <div class="card col-2 m-3 p-2">
+        <div class="card-content"><strong>ID: </strong>@item.Id</div>
+        <div class="card-content"><strong>Nome: </strong>@item.Nome</div>
+        <div class="card-content"><strong>Telefone: </strong>@item.Telefone</div>
+        <div class="card-content"><strong>Tipo: </strong>@item.TipoCliente</div>
+
+        <a class="btn btn-dark btn-sm mb-2" href="/cliente/detalhes/@item.Id">Detalhes</a>
+        <a class="btn btn-dark btn-sm mb-2" href="/cliente/editar/@item.Id">Editar</a>
+        <a class="btn btn-dark btn-sm mb-2" href="/cliente/excluir/@item.Id">Excluir</a>
+    </div>
+    }
+</div>

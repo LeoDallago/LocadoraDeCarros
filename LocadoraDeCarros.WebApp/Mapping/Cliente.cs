@@ -11,7 +11,7 @@ public class Cliente : Profile
         CreateMap<EditarClienteViewModel, Dominio.ModuloCliente.Cliente>();
 
         CreateMap<Dominio.ModuloCliente.Cliente, EditarClienteViewModel>();
-        CreateMap<Dominio.ModuloCliente.Cliente, ListarAutomovelViewModel>();
-        CreateMap<Dominio.ModuloCliente.Cliente, DetalhesAutomovelViewModel>();
+        CreateMap<Dominio.ModuloCliente.Cliente, ListarClienteViewModel>();
+        CreateMap<Dominio.ModuloCliente.Cliente, DetalhesClienteViewModel>();
     }
 }
