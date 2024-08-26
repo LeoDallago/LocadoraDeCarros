@@ -2,11 +2,13 @@ using System.Reflection;
 using LocadoraDeCarros.Aplicacao;
 using LocadoraDeCarros.Aplicacao.Servicos;
 using LocadoraDeCarros.Dominio.ModuloAutomoveis;
+using LocadoraDeCarros.Dominio.ModuloCliente;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloPlanos;
 using LocadoraDeCarros.Dominio.ModuloTaxa;
 using LocadoraDeCarros.Infra.Compartilhado;
 using LocadoraDeCarros.Infra.ModuloAutomovel;
+using LocadoraDeCarros.Infra.ModuloCliente;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.ModuloPlanos;
 using LocadoraDeCarros.Infra.ModuloTaxa;
@@ -25,6 +27,7 @@ builder.Services.AddScoped<IRepositorioGrupoAutomoveis,RepositorioGrupoAutomovei
 builder.Services.AddScoped<IRepositorioAutomovel, RepositorioAutomovel>();
 builder.Services.AddScoped<IRepositorioPlanos, RepositorioPlanos>();
 builder.Services.AddScoped<IRepositorioTaxa, RepositorioTaxa>();
+builder.Services.AddScoped<IRepositorioCliente, RepositorioCliente>();
 
 builder.Services.AddScoped<GrupoAutomoveisService>();
 builder.Services.AddScoped<AutomoveisService>();
