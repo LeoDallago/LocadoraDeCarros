@@ -1,0 +1,48 @@
+﻿@model LocadoraDeCarros.WebApp.Models.InserirCondutorViewModel?
+
+@{
+    ViewBag.Title = "Inserir Condutor";
+}
+
+<h1 class="fs-5 mb-3">Inserir Condutor</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="d-grid" enctype="multipart/form-data" asp-action="Inserir">
+                <label class="control-label fw-semibold mb-1">Cliente</label>
+                <select class="form-select" asp-for="ClienteId" asp-items="Model.Clientes">
+                    <option disabled>Selecione um Cliente</option>
+                </select>
+                <span class="text-danger fs-6" asp-validation-for="ClienteId"></span>
+                
+                
+                <label class="control-label fw-semibold">Nome:</label>
+                <input class="form-control" asp-for="Nome"/>
+                <span class="text-danger fs-6" asp-validation-for="Nome"></span>
+
+                <label class="control-label fw-semibold">Email:</label>
+                <input class="form-control" asp-for="Email"/>
+                <span class="text-danger fs-6" asp-validation-for="Email"></span>
+
+                <label class="control-label fw-semibold">Telefone:</label>
+                <input class="form-control" asp-for="Telefone"/>
+                <span class="text-danger fs-6" asp-validation-for="Telefone"></span>
+
+                <label class="control-label fw-semibold">CPF:</label>
+                <input class="form-control" asp-for="CPF"/>
+                <span class="text-danger fs-6" asp-validation-for="CPF"></span>
+
+                <label class="control-label fw-semibold">CNH:</label>
+                <input class="form-control" asp-for="CNH"/>
+                <span class="text-danger fs-6" asp-validation-for="CNH"></span>
+
+                <label class="control-label fw-semibold">Validade:</label>
+                <input type="date" class="form-control" asp-for="Validade"/>
+                <span class="text-danger fs-6" asp-validation-for="Validade"></span>
+
+                <button class="btn btn-dark col-3 mt-2">Inserir</button>
+            </form>
+        </div>
+    </div>
+</div>

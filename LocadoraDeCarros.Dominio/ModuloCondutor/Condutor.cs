@@ -5,7 +5,6 @@ namespace LocadoraDeCarros.Dominio.ModuloCondutor;
 
 public class Condutor : EntidadeBase
 {
-
     public string Nome { get; set; }
     
     public string Email { get; set; }

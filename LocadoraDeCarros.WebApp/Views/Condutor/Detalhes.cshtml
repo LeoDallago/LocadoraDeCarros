@@ -1,0 +1,24 @@
+﻿@model DetalhesCondutorViewModel
+
+@{
+    ViewBag.Title = "Detalhes condutor";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-4 m-3 p-4 fs-4">
+            <div class="card-content">ID: <strong>@Model.Id</strong></div>
+            <div class="card-content">Nome: <strong>@Model.Nome</strong></div>
+            <div class="card-content">Email: <strong>@Model.Email</strong></div>
+            <div class="card-content">Telefone: <strong>@Model.Telefone</strong></div>
+            <div class="card-content">CPF: <strong>@Model.CPF</strong></div>
+            <div class="card-content">CNH: <strong>@Model.CNH</strong></div>
+            <div class="card-content">Validade: <strong>@Model.Validade</strong></div>
+            <div class="card-content">Cliente: <strong>@Model.ClienteId</strong></div>
+
+            <a class="btn btn-dark btn-sm mb-2 mt-2 fs-5" href="/condutor/editar/@Model.Id">Editar</a>
+            <a class="btn btn-dark btn-sm mb-2 fs-5" href="/condutor/excluir/@Model.Id">Excluir</a>
+        </div>
+
+    </div>
+</div>
