@@ -37,6 +37,7 @@
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloCondutor.TesteIntegrado.Deve_Excluir_Condutor&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloConfiguracoes.TesteUnitario.Deve_Configurar_Corretamente&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloConfiguracoes.TesteUnitario.Deve_Editar_Corretamente&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloConfiguracoes.TestesIntegrados.Deve_Editar_Configuracoes&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;Category&gt;Integrados Grupo Automoveis&lt;/Category&gt;&#xD;
   &lt;/Or&gt;&#xD;
