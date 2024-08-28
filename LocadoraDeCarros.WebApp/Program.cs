@@ -41,6 +41,7 @@ builder.Services.AddScoped<PlanosService>();
 builder.Services.AddScoped<TaxaService>();
 builder.Services.AddScoped<ClienteService>();
 builder.Services.AddScoped<CondutorService>();
+builder.Services.AddScoped<ConfiguracoesService>();
 
 builder.Services.AddAutoMapper(cfg =>
 {

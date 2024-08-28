@@ -1,0 +1,33 @@
+﻿@model LocadoraDeCarros.WebApp.Models.ConfiguracoesViewModel
+
+@{
+    ViewBag.Title = "Editar Preços";
+}
+
+<h1 class="fs-5 mb-3">Editar preços</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="d-grid" asp-action="EditarConfiguracao">
+                <label class="control-label fw-semibold">Gasolina:</label>
+                <input type="number" class="form-control" asp-for="Gasolina"/>
+                <span class="text-danger fs-6" asp-validation-for="Gasolina"></span>
+
+                <label class="control-label fw-semibold">Gas:</label>
+                <input type="number" class="form-control" asp-for="Gas"/>
+                <span class="text-danger fs-6" asp-validation-for="Gas"></span>
+
+                <label class="control-label fw-semibold">Diesel:</label>
+                <input type="number" class="form-control" asp-for="Diesel"/>
+                <span class="text-danger fs-6" asp-validation-for="Diesel"></span>
+
+                <label class="control-label fw-semibold">Alcool:</label>
+                <input type="number" class="form-control" asp-for="Alcool"/>
+                <span class="text-danger fs-6" asp-validation-for="Alcool"></span>
+                
+                <button class="btn btn-dark col-3 m-2">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>
