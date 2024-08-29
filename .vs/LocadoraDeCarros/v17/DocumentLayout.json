@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|c:\\users\\leoda\\riderprojects\\locadoradecarros\\locadoradecarros.webapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|solutionrelative:locadoradecarros.webapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|c:\\users\\leoda\\riderprojects\\locadoradecarros\\locadoradecarros.webapp\\controllers\\compartilhado\\webcontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|solutionrelative:locadoradecarros.webapp\\controllers\\compartilhado\\webcontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|c:\\users\\leoda\\riderprojects\\locadoradecarros\\locadoradecarros.webapp\\extensions\\tempdatadictionaryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|solutionrelative:locadoradecarros.webapp\\extensions\\tempdatadictionaryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|c:\\users\\leoda\\riderprojects\\locadoradecarros\\locadoradecarros.webapp\\controllers\\grupoautomoveiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44ACD2C6-1F77-470D-ABC2-F09571BBE4BC}|LocadoraDeCarros.WebApp\\LocadoraDeCarros.WebApp.csproj|solutionrelative:locadoradecarros.webapp\\controllers\\grupoautomoveiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2EF4F51-D956-4F55-B83F-127DA1733521}|LocadoraDeCarros.Dominio\\LocadoraDeCarros.Dominio.csproj|c:\\users\\leoda\\riderprojects\\locadoradecarros\\locadoradecarros.dominio\\moduloaluguel\\aluguel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2EF4F51-D956-4F55-B83F-127DA1733521}|LocadoraDeCarros.Dominio\\LocadoraDeCarros.Dominio.csproj|solutionrelative:locadoradecarros.dominio\\moduloaluguel\\aluguel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +14,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "LocadoraDeCarros.WebApp\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "LocadoraDeCarros.WebApp\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-21T18:28:34.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TempDataDictionaryExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Extensions\\TempDataDictionaryExtensions.cs",
-              "RelativeDocumentMoniker": "LocadoraDeCarros.WebApp\\Extensions\\TempDataDictionaryExtensions.cs",
-              "ToolTip": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Extensions\\TempDataDictionaryExtensions.cs",
-              "RelativeToolTip": "LocadoraDeCarros.WebApp\\Extensions\\TempDataDictionaryExtensions.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Title": "Aluguel.cs",
+              "DocumentMoniker": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
+              "RelativeDocumentMoniker": "LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
+              "ToolTip": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
+              "RelativeToolTip": "LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T18:12:07.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WebControllerBase.cs",
-              "DocumentMoniker": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Controllers\\Compartilhado\\WebControllerBase.cs",
-              "RelativeDocumentMoniker": "LocadoraDeCarros.WebApp\\Controllers\\Compartilhado\\WebControllerBase.cs",
-              "ToolTip": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Controllers\\Compartilhado\\WebControllerBase.cs",
-              "RelativeToolTip": "LocadoraDeCarros.WebApp\\Controllers\\Compartilhado\\WebControllerBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T18:11:01.622Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GrupoAutomoveisController.cs",
-              "DocumentMoniker": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Controllers\\GrupoAutomoveisController.cs",
-              "RelativeDocumentMoniker": "LocadoraDeCarros.WebApp\\Controllers\\GrupoAutomoveisController.cs",
-              "ToolTip": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.WebApp\\Controllers\\GrupoAutomoveisController.cs",
-              "RelativeToolTip": "LocadoraDeCarros.WebApp\\Controllers\\GrupoAutomoveisController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T18:06:33.041Z",
+              "WhenOpened": "2024-08-29T12:29:50.124Z",
               "EditorCaption": ""
             }
           ]
