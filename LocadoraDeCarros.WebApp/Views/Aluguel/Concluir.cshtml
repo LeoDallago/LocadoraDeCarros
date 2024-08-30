@@ -1,0 +1,25 @@
+﻿@model EditarAluguelViewModel
+
+@{
+    ViewBag.Title = "Concluir Aluguel";
+}
+
+<div class="container">
+    <div class="row">
+        <form asp-action="Concluir">
+            <h3 class="fs-semibold fs-4">Deseja Concluir o aluguel <strong>@Model.Id</strong> ?</h3>
+
+            <div class="card col-4 m-3 p-2">
+                <div class="card-title">Informações</div>
+                <div class="card-content">Condutor: <strong>@Model.Id</strong></div>
+                <div class="card-content">Veiculo: <strong>@Model.AutomovelId</strong></div>
+                <div class="card-content">Saida: <strong>@Model.DataSaida</strong></div>
+                <div class="card-content">Retorno: <strong>@Model.DataRetorno</strong></div>
+                <div class="card-content">Valor Total: <strong>@Model.ValorTotal</strong></div>
+            </div>
+        
+                <button class="btn btn-dark col-2">Concluir</button>
+                <a class="btn btn-dark col-2" href="/aluguel/listar">Voltar</a>
+            </form>
+    </div>
+</div>

@@ -102,8 +102,8 @@ public class AluguelController : WebControllerBase
             editarAluguelVm,
             editarAluguelVm.CondutorId,
             editarAluguelVm.AutomovelId,
-            editarAluguelViewModel.PlanoId,
-            editarAluguelViewModel.TaxaId
+            editarAluguelVm.PlanoId,
+            editarAluguelVm.TaxaId
             );
         
         ApresentarMensagemSucesso("Aluguel EDITADO com sucesso!");
@@ -117,16 +117,22 @@ public class AluguelController : WebControllerBase
         
         var detalhesAluguelVm = _mapper.Map<DetalhesAluguelViewModel>(resultado.Value);
         
+        if (detalhesAluguelVm.Concluido == false)
+        {
+            ApresentarMensagemInSucesso("Aluguel não concluido");
+
+            return RedirectToAction(nameof(Listar));
+        }
+        
         return View(detalhesAluguelVm);
     }
 
     [HttpPost]
     public IActionResult Excluir(DetalhesAluguelViewModel detalhesAluguelViewModel)
-    { 
+    {
         _aluguelService.Excluir(detalhesAluguelViewModel.Id);
-        
+     
         ApresentarMensagemSucesso("Aluguel EXCLUIDO com sucesso!");
-        
         return RedirectToAction(nameof(Listar));
     }
 
@@ -139,6 +145,34 @@ public class AluguelController : WebControllerBase
         return View(detalhesAluguelVm);
     }
 
+
+    public IActionResult Concluir(int id)
+    {
+        var resultado = _aluguelService.SelecionarPorId(id);
+        
+        var detalhesAluguelVm = _mapper.Map<EditarAluguelViewModel>(resultado.Value);
+        
+        return View(detalhesAluguelVm);
+    }
+
+    [HttpPost]
+    public IActionResult Concluir(EditarAluguelViewModel editarAluguelViewModel)
+    {
+        editarAluguelViewModel.Concluido = true;
+       var editarAluguelVm = _mapper.Map<Aluguel>(editarAluguelViewModel);
+        
+       _aluguelService.Editar(
+           editarAluguelVm.Id,
+           editarAluguelVm,
+           editarAluguelVm.CondutorId,
+           editarAluguelVm.AutomovelId,
+           editarAluguelVm.PlanoId,
+           editarAluguelVm.TaxaId
+       );
+       ApresentarMensagemSucesso("Aluguel CONCLUIDO com sucesso!");
+        
+       return RedirectToAction(nameof(Listar));
+    }
 
     #region Metodos
 

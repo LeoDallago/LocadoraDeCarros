@@ -35,5 +35,14 @@ namespace LocadoraDeCarros.WebApp.Controllers.Compartilhado
                 Mensagem = mensagem
             });
         }
+        
+        protected void ApresentarMensagemInSucesso(string mensagem)
+        {
+            TempData.SerializarMensagemViewModel(new MensagemViewModel
+            {
+                Titulo = "Erro",
+                Mensagem = mensagem
+            });
+        }
     }
 }
