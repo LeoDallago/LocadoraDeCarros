@@ -1,0 +1,13 @@
+﻿@model DetalhesAluguelViewModel
+
+@{
+    ViewBag.Title = "Excluir Aluguel";
+}
+
+<h2 class="fs-4 mb-3">Excluir Aluguel</h2>
+
+<form class="d-block" asp-action="Excluir">
+    <h3 class="fs-semibold fs-5">Deseja Excluir o aluguel <strong>@Model.Id</strong> ?</h3>
+    <button class="btn btn-danger col-2">Excluir</button>
+    <a class="btn btn-dark col-2" href="/aluguel/listar">Voltar</a>
+</form>

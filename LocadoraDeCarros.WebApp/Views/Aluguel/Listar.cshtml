@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ListarAluguelViewModel>
+
+@{
+    ViewBag.Title = "Listar Alugueis";
+}
+
+<h2>listar alugueis</h2>
+
+<a class="btn btn-dark" href="/aluguel/inserir">Novo aluguel</a>
+
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card col-2 m-3 p-2">
+            <div class="card-content"><strong>Id: </strong>@item.Id</div>
+            <div class="card-content"><strong>Condutor: </strong>@item.CondutorId</div>
+            <div class="card-content"><strong>Veiculo: </strong>@item.AutomovelId</div>
+            <div class="card-content"><strong>Plano: </strong>@item.PlanoId</div>
+            <div class="card-content"><strong>Saida: </strong>@item.DataSaida.ToShortDateString()</div>
+            <div class="card-content"><strong>Retorno: </strong>@item.DataRetorno.ToShortDateString()</div>
+            
+            <a class="btn btn-dark btn-sm mb-2" href="/aluguel/detalhes/@item.Id">Detalhes</a> 
+            <a class="btn btn-dark btn-sm mb-2" href="/aluguel/editar/@item.Id">Editar</a> 
+            <a class="btn btn-dark btn-sm mb-2" href="/aluguel/excluir/@item.Id">Excluir</a>
+        </div>
+    }
+</div>
+

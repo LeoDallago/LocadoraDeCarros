@@ -83,9 +83,6 @@ public class AluguelService
         if (aluguel is null)
         {
             return Result.Fail("Aluguel nao encontrado!");
-        }else if (aluguel.Concluido == false)
-        {
-            return Result.Fail("Aluguel não finalizado!");
         }
         
         _repositorioAluguel.Excluir(aluguel);
