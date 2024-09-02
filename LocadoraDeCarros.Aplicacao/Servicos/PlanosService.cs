@@ -51,7 +51,7 @@ public class PlanosService
         planoSelecionado.PrecoDiaria = plano.PrecoDiaria;
         planoSelecionado.PrecoKm = plano.PrecoKm;
         planoSelecionado.KmDisponivel = plano.KmDisponivel;
-        planoSelecionado.KmExtrapolado = plano.KmExtrapolado;
+        planoSelecionado.KmLivre = plano.KmLivre;
         planoSelecionado.GrupoId = grupoSelecionado.Id;
         planoSelecionado.Grupo = grupoSelecionado;
         

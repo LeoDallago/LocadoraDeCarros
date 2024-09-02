@@ -1,6 +1,6 @@
 ﻿using LocadoraDeCarros.Dominio.ModuloAutomoveis;
 using LocadoraDeCarros.Infra.Compartilhado;
-using LocadoraDeCarros.Infra.Migrations;
+//using LocadoraDeCarros.Infra.Migrations;
 using LocadoraDeCarros.Infra.ModuloAutomovel;
 using GrupoAutomoveis = LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis.GrupoAutomoveis;
 

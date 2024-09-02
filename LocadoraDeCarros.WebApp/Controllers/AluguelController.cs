@@ -41,7 +41,7 @@ public class AluguelController : WebControllerBase
     public IActionResult Listar()
     {
         var alugueis = _aluguelService.SelecionarTodos();
-
+        
         var listarALuguelVm = _mapper.Map<IEnumerable<ListarAluguelViewModel>>(alugueis.Value);
         
         ViewBag.Mensagem = TempData.DesserializarMensagemViewModel();
@@ -69,7 +69,6 @@ public class AluguelController : WebControllerBase
         int automovelId = inserirAluguelViewModel.AutomovelId;
         int planoId = inserirAluguelViewModel.PlanoId;
         int taxaId = inserirAluguelViewModel.TaxaId;
-        
         
        var resultado =_aluguelService.Inserir(novoAluguel, condutorId, automovelId, planoId, taxaId);
        
@@ -158,8 +157,9 @@ public class AluguelController : WebControllerBase
     [HttpPost]
     public IActionResult Concluir(EditarAluguelViewModel editarAluguelViewModel)
     {
-        editarAluguelViewModel.Concluido = true;
        var editarAluguelVm = _mapper.Map<Aluguel>(editarAluguelViewModel);
+        
+       editarAluguelVm.ConcluirAluguel();
         
        _aluguelService.Editar(
            editarAluguelVm.Id,
@@ -172,6 +172,44 @@ public class AluguelController : WebControllerBase
        ApresentarMensagemSucesso("Aluguel CONCLUIDO com sucesso!");
         
        return RedirectToAction(nameof(Listar));
+    }
+
+    public IActionResult Calcular(int id)
+    {
+        var resultado = _aluguelService.SelecionarPorId(id);
+        
+        var editarAluguelVm = _mapper.Map<EditarAluguelViewModel>(resultado.Value);
+        
+        return View(CarregarInformacoes(editarAluguelVm));
+    }
+
+    [HttpPost]
+    public IActionResult Calcular(EditarAluguelViewModel editarAluguelViewModel)
+    { 
+        var aluguel = _aluguelService.SelecionarPorId(editarAluguelViewModel.Id);
+        var condutor = _condutorService.SelecionarPorId(editarAluguelViewModel.CondutorId);
+        var automovel = _automoveisService.SelecionarPorId(editarAluguelViewModel.AutomovelId);
+        var plano = _planosService.SelecionarPorId(editarAluguelViewModel.PlanoId);
+        var taxa = _taxaService.SelecionarPorId(editarAluguelViewModel.TaxaId);
+
+        aluguel.Value.Condutor = condutor.Value;
+        aluguel.Value.Automovel = automovel.Value;
+        aluguel.Value.Plano = plano.Value;
+        aluguel.Value.Taxa = taxa.Value;
+
+        aluguel.Value.ValorTotal = (decimal)aluguel.Value.Calcular();
+        
+        _aluguelService.Editar(
+            aluguel.Value.Id,
+            aluguel.Value,
+            aluguel.Value.CondutorId,
+            aluguel.Value.AutomovelId,
+            aluguel.Value.PlanoId,
+            aluguel.Value.TaxaId);
+        
+        ApresentarMensagemSucesso("Calculo efetuado com sucesso!");
+       //todo refatorar e melhorar parte de calculo
+        return RedirectToAction(nameof(Listar));
     }
 
     #region Metodos

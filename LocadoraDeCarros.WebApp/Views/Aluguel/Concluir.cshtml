@@ -16,6 +16,10 @@
                 <div class="card-content">Saida: <strong>@Model.DataSaida</strong></div>
                 <div class="card-content">Retorno: <strong>@Model.DataRetorno</strong></div>
                 <div class="card-content">Valor Total: <strong>@Model.ValorTotal</strong></div>
+                
+                <input type="hidden" asp-for="DataSaida"/>
+                <input type="hidden" asp-for="DataRetorno"/>
+                <input type="hidden" asp-for="ValorTotal"/>
             </div>
         
                 <button class="btn btn-dark col-2">Concluir</button>

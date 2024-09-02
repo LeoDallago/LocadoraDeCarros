@@ -42,7 +42,10 @@
                 </select>
                 <span class="text-danger fs-6" asp-validation-for="PlanoId"></span>
                 
-                <button class="btn btn-dark col-3 mt-2">Inserir</button>
+                <div class="d-block">
+                    <button class="btn btn-success mt-2" asp-action="Calcular" asp-route-id="@Model.Id">Calcular aluguel</button>
+                    <button class="btn btn-dark col-3 mt-2">Inserir</button>
+                </div>
             </form>
         </div>
     </div>

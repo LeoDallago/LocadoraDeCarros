@@ -78,4 +78,107 @@ public class TesteUnitario
         //Assert
         Assert.IsTrue(aluguel.Concluido);
     }
+
+    [TestMethod]
+    public void Deve_Calcular_Valor_Aluguel_Plano_Cobranca_livre()
+    {
+        var planoLivre = new Planos("Livre",200);
+        Condutor condutor = new Condutor();
+        Automovel automovel = new Automovel();
+        Taxa taxa = new Taxa();
+        Aluguel aluguelTeste;
+        
+        aluguelTeste = new Aluguel(
+            condutor,
+            automovel,
+            DateTime.Now,
+            DateTime.Now.AddDays(1),
+            planoLivre,
+            taxa,
+            false
+        );
+
+        var resultado = aluguelTeste.Calcular();
+        
+        //Assert
+        Assert.AreEqual(200m, resultado);
+    }
+    
+    [TestMethod]
+    public void Deve_Calcular_Valor_Aluguel_Plano_Cobranca_diario()
+    {
+        var planoDiario = new Planos("Diario",200, 100m);
+        Condutor condutor = new Condutor();
+        Automovel automovel = new Automovel();
+        Taxa taxa = new Taxa();
+        Aluguel aluguelTeste;
+        
+        aluguelTeste = new Aluguel(
+            condutor,
+            automovel,
+            DateTime.Now,
+            DateTime.Now.AddDays(1),
+            planoDiario,
+            taxa,
+            false
+        );
+        aluguelTeste.KmRodados = 10;
+        
+        var resultado = aluguelTeste.Calcular();
+        
+        //Assert
+        Assert.AreEqual(1200m, resultado);
+    }
+    
+    [TestMethod]
+    public void Deve_Calcular_Valor_Aluguel_Plano_Cobranca_controlado_dentro_do_limite()
+    {
+        var planoControlado = new Planos("Controlado",200, 100m,20m);
+        Condutor condutor = new Condutor();
+        Automovel automovel = new Automovel();
+        Taxa taxa = new Taxa();
+        Aluguel aluguelTeste;
+        
+        aluguelTeste = new Aluguel(
+            condutor,
+            automovel,
+            DateTime.Now,
+            DateTime.Now.AddDays(1),
+            planoControlado,
+            taxa,
+            false
+        );
+        aluguelTeste.KmRodados = 10;
+        
+        var resultado = aluguelTeste.Calcular();
+        
+        //Assert
+        Assert.AreEqual(200m, resultado);
+    }
+    
+    [TestMethod]
+    public void Deve_Calcular_Valor_Aluguel_Plano_Cobranca_controlado_extrapolando_do_limite()
+    {
+        var planoControlado = new Planos("Controlado",200, 100m,20m);
+        Condutor condutor = new Condutor();
+        Automovel automovel = new Automovel();
+        Taxa taxa = new Taxa();
+        Aluguel aluguelTeste;
+        
+        aluguelTeste = new Aluguel(
+            condutor,
+            automovel,
+            DateTime.Now,
+            DateTime.Now.AddDays(1),
+            planoControlado,
+            taxa,
+            false
+        );
+        aluguelTeste.KmRodados = 30;
+        
+        var resultado = aluguelTeste.Calcular();
+        
+        //Assert
+        Assert.AreEqual(1200m, resultado);
+    }
 }

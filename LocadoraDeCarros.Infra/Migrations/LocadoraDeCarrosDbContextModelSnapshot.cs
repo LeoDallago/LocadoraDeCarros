@@ -45,6 +45,9 @@ namespace LocadoraDeCarros.Infra.Migrations
                     b.Property<DateTime>("DataSaida")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("KmRodados")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<int>("PlanoId")
                         .HasColumnType("int");
 
@@ -269,18 +272,18 @@ namespace LocadoraDeCarros.Infra.Migrations
                     b.Property<decimal>("KmDisponivel")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<decimal>("KmExtrapolado")
+                    b.Property<decimal>("KmLivre")
                         .HasColumnType("decimal(10,2)");
-
-                    b.Property<string>("Plano")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
 
                     b.Property<decimal>("PrecoDiaria")
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<decimal>("PrecoKm")
                         .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 

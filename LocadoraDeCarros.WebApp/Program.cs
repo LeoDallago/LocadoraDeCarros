@@ -19,7 +19,7 @@ using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.ModuloPlanos;
 using LocadoraDeCarros.Infra.ModuloTaxa;
 using Microsoft.Data.SqlClient;
-using GrupoAutomoveis = LocadoraDeCarros.Infra.Migrations.Initial;
+//using GrupoAutomoveis = LocadoraDeCarros.Infra.Migrations.Initial;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -25,6 +25,9 @@ public class MapeadorAluguel : IEntityTypeConfiguration<Aluguel>
             .HasForeignKey(a => a.AutomovelId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.Property(a => a.KmRodados)
+            .HasColumnType("decimal(10,2)");
+
         builder.Property(a => a.DataSaida)
             .IsRequired()
             .HasColumnType("datetime2");

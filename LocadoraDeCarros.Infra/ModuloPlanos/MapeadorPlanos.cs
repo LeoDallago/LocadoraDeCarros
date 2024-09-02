@@ -28,7 +28,7 @@ public class MapeadorPlanos : IEntityTypeConfiguration<Planos>
         builder.Property(p => p.KmDisponivel)
             .HasColumnType("decimal(10,2)");
 
-        builder.Property(p => p.KmExtrapolado)
+        builder.Property(p => p.KmLivre)
             .HasColumnType("decimal(10,2)");
 
         builder.HasOne(p => p.Grupo)

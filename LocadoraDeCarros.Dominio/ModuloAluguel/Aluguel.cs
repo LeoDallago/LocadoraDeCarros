@@ -10,7 +10,6 @@ namespace LocadoraDeCarros.Dominio.ModuloAluguel;
 
 public class Aluguel : EntidadeBase
 {
-
     public int CondutorId { get; set; }
 
     public Condutor Condutor { get; set; }
@@ -18,29 +17,30 @@ public class Aluguel : EntidadeBase
     public int AutomovelId { get; set; }
 
     public Automovel Automovel { get; set; }
-    
+
+    public decimal KmRodados { get; set; }
+
     public DateTime DataSaida { get; set; }
-    
+
     public DateTime DataRetorno { get; set; }
-    
+
     public int PlanoId { get; set; }
 
     public Planos Plano { get; set; }
-    
+
     public int TaxaId { get; set; }
 
     public Taxa Taxa { get; set; }
-    
+
     public bool Concluido { get; set; }
-    
+
     public decimal ValorTotal { get; set; }
 
-    
+
     public Aluguel()
     {
-        
     }
-    
+
     public Aluguel(
         Condutor condutor,
         Automovel automovel,
@@ -49,8 +49,8 @@ public class Aluguel : EntidadeBase
         Planos plano,
         Taxa taxa,
         bool concluido,
-        decimal valorTotal
-        )
+        decimal valorTotal = 0
+    )
     {
         Condutor = condutor;
         Automovel = automovel;
@@ -59,14 +59,10 @@ public class Aluguel : EntidadeBase
         Plano = plano;
         Taxa = taxa;
         Concluido = concluido;
-        ValorTotal = valorTotal;
     }
 
-    public void ConcluirAluguel()
-    {
-        Concluido = true;
-    }
-    
+   
+
     public Aluguel(
         int condutorId,
         Condutor condutor,
@@ -80,7 +76,7 @@ public class Aluguel : EntidadeBase
         Taxa taxa,
         bool concluido,
         decimal valorTotal
-        )
+    )
     {
         CondutorId = condutorId;
         Condutor = condutor;
@@ -95,6 +91,31 @@ public class Aluguel : EntidadeBase
         Concluido = concluido;
         ValorTotal = valorTotal;
     }
+
+    public void ConcluirAluguel()
+    {
+        Concluido = true;
+    }
     
-    //todo fazer calcular valor total
+    public object Calcular()
+    {
+        decimal valorDasDiarias = Plano.PrecoDiaria * Convert.ToDecimal((DataRetorno - DataSaida).Days);
+
+        if (Plano.Plano == "Plano Livre")
+            return valorDasDiarias;
+
+        else if (Plano.Plano == "Plano Diario")
+            return valorDasDiarias + (KmRodados * Plano.PrecoKm);
+
+        else if (Plano.Plano == "Plano Controlado")
+        {
+            if (KmRodados < Plano.KmLivre)
+                return valorDasDiarias;
+            else
+                return valorDasDiarias + (KmRodados - Plano.KmLivre) * Plano.PrecoKm;
+        }
+        
+        return 0m;
+        
+    }
 }
