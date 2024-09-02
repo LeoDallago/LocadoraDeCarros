@@ -1,8 +1,26 @@
-﻿@{
+﻿@model IEnumerable<ListarAluguelViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Bem-Vindo</h1>
-    <p>Em breve novidades :)</p>
+    <h1 class="display-4 mb-3">Bem-Vindo</h1>
+    <p class="display-6">Alugueis em Aberto</p>
+</div>
+
+
+<div class="container d-flex">
+    @foreach (var item in Model)
+    {
+        <div class="card col-2 m-3 p-2">
+            <div class="card-content"><strong>Condutor: </strong>@item.CondutorId</div>
+            <div class="card-content"><strong>Veiculo: </strong>@item.AutomovelId</div>
+            <div class="card-content"><strong>Plano: </strong>@item.PlanoId</div>
+            <div class="card-content"><strong>Saida: </strong>@item.DataSaida.ToShortDateString()</div>
+            <div class="card-content"><strong>Retorno: </strong>@item.DataRetorno.ToShortDateString()</div>
+            <div class="card-content"><strong>Valor Total: </strong>@item.ValorTotal</div>
+
+            <a class="btn btn-dark btn-sm mb-2" href="/aluguel/detalhes/@item.Id">Detalhes</a>
+        </div>
+    }
 </div>

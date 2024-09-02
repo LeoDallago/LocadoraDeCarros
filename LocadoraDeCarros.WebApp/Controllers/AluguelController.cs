@@ -41,7 +41,7 @@ public class AluguelController : WebControllerBase
     public IActionResult Listar()
     {
         var alugueis = _aluguelService.SelecionarTodos();
-        
+
         var listarALuguelVm = _mapper.Map<IEnumerable<ListarAluguelViewModel>>(alugueis.Value);
         
         ViewBag.Mensagem = TempData.DesserializarMensagemViewModel();
