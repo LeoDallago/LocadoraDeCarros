@@ -6,6 +6,7 @@ using LocadoraDeCarros.Dominio.ModuloAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloCliente;
 using LocadoraDeCarros.Dominio.ModuloCondutor;
 using LocadoraDeCarros.Dominio.ModuloConfiguracoes;
+using LocadoraDeCarros.Dominio.ModuloFuncionario;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloPlanos;
 using LocadoraDeCarros.Dominio.ModuloTaxa;
@@ -16,6 +17,7 @@ using LocadoraDeCarros.Infra.ModuloAutomovel;
 using LocadoraDeCarros.Infra.ModuloCliente;
 using LocadoraDeCarros.Infra.ModuloCondutor;
 using LocadoraDeCarros.Infra.ModuloConfiguracoes;
+using LocadoraDeCarros.Infra.ModuloFuncionario;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.ModuloPlanos;
 using LocadoraDeCarros.Infra.ModuloTaxa;
@@ -40,6 +42,7 @@ builder.Services.AddScoped<IRepositorioCliente, RepositorioCliente>();
 builder.Services.AddScoped<IRepositorioCondutor, RepositorioCondutor>();
 builder.Services.AddScoped<IRepositorioConfiguracoes, RepositorioConfiguracoes>();
 builder.Services.AddScoped<IRepositorioAluguel, RepositorioAluguel>();
+builder.Services.AddScoped<IRepositorioFuncionario,RepositorioFuncionario>();
 
 builder.Services.AddScoped<GrupoAutomoveisService>();
 builder.Services.AddScoped<AutomoveisService>();
@@ -49,6 +52,7 @@ builder.Services.AddScoped<ClienteService>();
 builder.Services.AddScoped<CondutorService>();
 builder.Services.AddScoped<ConfiguracoesService>();
 builder.Services.AddScoped<AluguelService>();
+builder.Services.AddScoped<FuncionarioService>();
 
 builder.Services.AddIdentity<Usuario, Perfil>()
     .AddEntityFrameworkStores<LocadoraDeCarrosDbContext>()

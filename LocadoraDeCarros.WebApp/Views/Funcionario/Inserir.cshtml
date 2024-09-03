@@ -1,0 +1,29 @@
+﻿@model InserirFuncionarioViewModel
+
+@{
+    ViewBag.Title = "Inserir Funcionarios";
+}
+
+<h1 class="fs-5 mb-3">Inserir Funcionario</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="d-grid" asp-action="Inserir">
+                <label class="control-label fw-semibold">Nome:</label>
+                <input class="form-control" asp-for="Nome"/>
+                <span class="text-danger fs-6" asp-validation-for="Nome"></span>
+
+                <label class="control-label fw-semibold">Data de admissao:</label>
+                <input class="form-control" type="date" asp-for="Admissao"/>
+                <span class="text-danger fs-6" asp-validation-for="Admissao"></span>
+
+                <label class="control-label fw-semibold">Salario:</label>
+                <input class="form-control" type="number" asp-for="Salario"/>
+                <span class="text-danger fs-6" asp-validation-for="Salario"></span>
+
+                <button class="btn btn-dark col-3 mt-2">Inserir</button>
+            </form>
+        </div>
+    </div>
+</div>
