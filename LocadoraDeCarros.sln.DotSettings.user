@@ -61,6 +61,11 @@
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloAluguel.TesteUnitario.Deve_Calcular_Valor_Aluguel_Plano_Cobranca_livre&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloAluguel.TesteUnitario.Deve_Calcular_Valor_Aluguel_Plano_Cobranca_diario&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloAluguel.TesteUnitario&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloFuncionario.TesteUnitario.Deve_Inserir_Funcionario&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Unitarios.ModuloFuncionario.TesteUnitario.Deve_Atualizar_Funcionario&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloFuncionario.TesteIntegrado.Deve_inserir_funcionario&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloFuncionario.TesteIntegrado.Deve_Atualizar_funcionario&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::4EBFB2E0-3E1D-4F76-84B6-757E32A412D4::net8.0::LocadoraDeCarros.Testes.Integrados.ModuloFuncionario.TesteIntegrado.Deve_Excluir_funcionario&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;Category&gt;Integrados Grupo Automoveis&lt;/Category&gt;&#xD;
   &lt;/Or&gt;&#xD;

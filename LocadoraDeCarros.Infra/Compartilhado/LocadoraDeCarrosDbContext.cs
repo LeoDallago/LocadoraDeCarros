@@ -3,6 +3,7 @@ using LocadoraDeCarros.Dominio.ModuloAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloCliente;
 using LocadoraDeCarros.Dominio.ModuloCondutor;
 using LocadoraDeCarros.Dominio.ModuloConfiguracoes;
+using LocadoraDeCarros.Dominio.ModuloFuncionario;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloPlanos;
 using LocadoraDeCarros.Dominio.ModuloTaxa;
@@ -12,6 +13,7 @@ using LocadoraDeCarros.Infra.ModuloAutomovel;
 using LocadoraDeCarros.Infra.ModuloCliente;
 using LocadoraDeCarros.Infra.ModuloCondutor;
 using LocadoraDeCarros.Infra.ModuloConfiguracoes;
+using LocadoraDeCarros.Infra.ModuloFuncionario;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.ModuloPlanos;
 using LocadoraDeCarros.Infra.ModuloTaxa;
@@ -38,6 +40,8 @@ public class LocadoraDeCarrosDbContext : IdentityDbContext<Usuario, Perfil, int>
     public DbSet<Configuracoes> Configuracoes { get; set; }
     
     public DbSet<Aluguel> Aluguel { get; set; }
+    
+    public DbSet<Funcionario> Funcionario { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -66,6 +70,7 @@ public class LocadoraDeCarrosDbContext : IdentityDbContext<Usuario, Perfil, int>
         modelBuilder.ApplyConfiguration(new MapeadorCondutor());
         modelBuilder.ApplyConfiguration(new MapeadorConfiguracoes());
         modelBuilder.ApplyConfiguration(new MapeadorAluguel());
+        modelBuilder.ApplyConfiguration(new MapeadorFuncionario());
         base.OnModelCreating(modelBuilder);
     }
 }
