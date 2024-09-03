@@ -6,11 +6,13 @@ using LocadoraDeCarros.Dominio.ModuloAluguel;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize]
 public class AluguelController : WebControllerBase
 {
     private readonly AluguelService _aluguelService;
@@ -65,6 +67,8 @@ public class AluguelController : WebControllerBase
         
         var novoAluguel = _mapper.Map<Aluguel>(inserirAluguelViewModel);
 
+        novoAluguel.UsuarioId = UsuarioId.GetValueOrDefault();
+        
         int condutorId = inserirAluguelViewModel.CondutorId;
         int automovelId = inserirAluguelViewModel.AutomovelId;
         int planoId = inserirAluguelViewModel.PlanoId;

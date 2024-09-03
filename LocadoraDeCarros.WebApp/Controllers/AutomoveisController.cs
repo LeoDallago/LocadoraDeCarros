@@ -5,11 +5,13 @@ using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize]
 public class AutomoveisController : WebControllerBase
 {
     private readonly AutomoveisService _repositorioAutomovel;
@@ -54,6 +56,8 @@ public class AutomoveisController : WebControllerBase
         var fotoSalva = await SalvarArquivo(inserirAutomovelViewModel.Foto);
         
         var novoAutomovel = _mapper.Map<Automovel>(inserirAutomovelViewModel);
+
+        novoAutomovel.UsuarioId = UsuarioId.GetValueOrDefault();
         
         novoAutomovel.Foto = fotoSalva;
         

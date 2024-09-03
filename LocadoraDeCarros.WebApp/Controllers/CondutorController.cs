@@ -4,11 +4,13 @@ using LocadoraDeCarros.Dominio.ModuloCondutor;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize (Roles = "Empresa")]
 public class CondutorController : WebControllerBase
 {
     private readonly CondutorService _condutorService;
@@ -47,6 +49,8 @@ public class CondutorController : WebControllerBase
         }
         
         var novoCondutor = _mapper.Map<Condutor>(inserirCondutorVm);
+
+        novoCondutor.UsuarioId = UsuarioId.GetValueOrDefault();
         
         int clienteId = inserirCondutorVm.ClienteId;
         

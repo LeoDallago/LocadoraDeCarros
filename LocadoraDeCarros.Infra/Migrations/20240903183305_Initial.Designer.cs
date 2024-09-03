@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraDeCarros.Infra.Migrations
 {
     [DbContext(typeof(LocadoraDeCarrosDbContext))]
-    [Migration("20240903130134_Initial")]
+    [Migration("20240903183305_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -58,7 +58,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18,2)");
@@ -118,7 +119,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.HasKey("Id");
 
@@ -174,7 +176,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.HasKey("Id");
 
@@ -215,7 +218,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.Property<DateTime>("Validade")
                         .HasColumnType("datetime2");
@@ -250,7 +254,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.HasKey("Id");
 
@@ -272,7 +277,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.HasKey("Id");
 
@@ -309,7 +315,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("decimal(5,2)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.HasKey("Id");
 
@@ -340,7 +347,8 @@ namespace LocadoraDeCarros.Infra.Migrations
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.HasKey("Id");
 

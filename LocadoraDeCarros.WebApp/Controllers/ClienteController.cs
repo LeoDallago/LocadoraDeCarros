@@ -4,10 +4,12 @@ using LocadoraDeCarros.Dominio.ModuloCliente;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize]
 public class ClienteController : WebControllerBase
 {
     private readonly ClienteService _clienteService;
@@ -44,6 +46,8 @@ public class ClienteController : WebControllerBase
         
         var novoCLiente = _mapper.Map<Cliente>(inserirClienteVm);
 
+        novoCLiente.UsuarioId = UsuarioId.GetValueOrDefault();
+        
         var resultado = _clienteService.Inserir(novoCLiente);
         
         if (resultado.IsFailed)

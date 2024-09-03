@@ -23,10 +23,15 @@ public class MapeadorConfiguracoes : IEntityTypeConfiguration<Configuracoes>
         
         builder.Property(c => c.Alcool)
             .HasColumnType("decimal(18,2)");
+        
+        builder.Property(c => c.UsuarioId)
+            .IsRequired()
+            .HasColumnType("int")
+            .HasColumnName("UsuarioId");
     
         builder.HasOne(g => g.Usuario)
             .WithMany()
-            .HasForeignKey("UsuarioId")
+            .HasForeignKey(g => g.UsuarioId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Restrict);
         

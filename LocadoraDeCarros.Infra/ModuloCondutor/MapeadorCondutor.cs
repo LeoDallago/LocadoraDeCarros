@@ -42,9 +42,14 @@ public class MapeadorCondutor : IEntityTypeConfiguration<Condutor>
             .HasForeignKey(c => c.ClienteId)
             .OnDelete(DeleteBehavior.Restrict);
         
+        builder.Property(c => c.UsuarioId)
+            .IsRequired()
+            .HasColumnType("int")
+            .HasColumnName("UsuarioId");
+        
         builder.HasOne(g => g.Usuario)
             .WithMany()
-            .HasForeignKey("UsuarioId")
+            .HasForeignKey(g => g.UsuarioId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Restrict);
     }

@@ -3,6 +3,7 @@ using AutoMapper;
 using LocadoraDeCarros.Aplicacao.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
@@ -19,6 +20,7 @@ public class HomeController : Controller
         _mapper = mapper;
     }
 
+    [AllowAnonymous]
     public IActionResult Index()
     {
         var alugueis = _aluguelService.SelecionarTodos();

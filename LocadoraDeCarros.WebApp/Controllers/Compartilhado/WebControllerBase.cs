@@ -1,4 +1,5 @@
-﻿using FluentResults;
+﻿using System.Security.Claims;
+using FluentResults;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,19 @@ namespace LocadoraDeCarros.WebApp.Controllers.Compartilhado
 {
     public abstract class WebControllerBase : Controller
     {
+        protected int? UsuarioId
+        {
+            get
+            {
+                var usuarioAutenticado = User.FindFirst(ClaimTypes.NameIdentifier);
+
+                if (usuarioAutenticado is null)
+                    return null;
+
+                return int.Parse(usuarioAutenticado.Value);
+            }
+        }
+        
         protected IActionResult MensagemRegistroNaoEncontrado(int idRegistro)
         {
             TempData.SerializarMensagemViewModel(new MensagemViewModel

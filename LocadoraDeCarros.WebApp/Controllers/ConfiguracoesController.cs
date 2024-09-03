@@ -4,10 +4,12 @@ using LocadoraDeCarros.Dominio.ModuloConfiguracoes;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize (Roles = "Empresa")]
 public class ConfiguracoesController : WebControllerBase
 {
     private readonly ConfiguracoesService _configuracoesService;

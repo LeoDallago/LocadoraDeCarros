@@ -12,13 +12,12 @@ public class GrupoAutomoveisService
         _repositorioGrupoAutomoveis = repositorioGrupoAutomoveis;
     }
 
-    public Result<GrupoAutomoveis> Inserir(string grupoAutomoveis)
+    public Result<GrupoAutomoveis> Inserir(GrupoAutomoveis grupoAutomoveis)
     {
-        var grupo = new GrupoAutomoveis(grupoAutomoveis);
         
-        _repositorioGrupoAutomoveis.Inserir(grupo);
+        _repositorioGrupoAutomoveis.Inserir(grupoAutomoveis);
         
-        return Result.Ok(grupo);
+        return Result.Ok(grupoAutomoveis);
     }
 
     public Result<GrupoAutomoveis> Editar(int grupoAutomoveisId, string grupoEditado)

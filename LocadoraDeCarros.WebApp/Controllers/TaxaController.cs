@@ -4,10 +4,12 @@ using LocadoraDeCarros.Dominio.ModuloTaxa;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize (Roles = "Empresa")]
 public class TaxaController : WebControllerBase
 {
     private TaxaService _taxaService;
@@ -43,6 +45,8 @@ public class TaxaController : WebControllerBase
             return View(inserirTaxaViewModel);
         
         var novaTaxa = _mapper.Map<Taxa>(inserirTaxaViewModel);
+
+        novaTaxa.UsuarioId = UsuarioId.GetValueOrDefault();
         
         var resultado = _taxaService.Inserir(novaTaxa);
         

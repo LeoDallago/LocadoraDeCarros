@@ -4,10 +4,12 @@ using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocadoraDeCarros.WebApp.Controllers;
 
+[Authorize (Roles = "Empresa")]
 public class GrupoAutomoveisController : WebControllerBase
 {
     private readonly GrupoAutomoveisService _grupoAutomoveisService;
@@ -32,7 +34,7 @@ public class GrupoAutomoveisController : WebControllerBase
 
         return View(listarGruposVm);
     }
-
+    
     public IActionResult Inserir()
     {
         return View();
@@ -45,8 +47,10 @@ public class GrupoAutomoveisController : WebControllerBase
             return View(grupoAutomoveisViewModel);
         
         var novoGrupo = _mapper.Map<GrupoAutomoveis>(grupoAutomoveisViewModel);
+
+        novoGrupo.UsuarioId = UsuarioId.GetValueOrDefault();
         
-        var resultado = _grupoAutomoveisService.Inserir(novoGrupo.Grupo);
+        var resultado = _grupoAutomoveisService.Inserir(novoGrupo);
 
         if (resultado.IsFailed)
         {

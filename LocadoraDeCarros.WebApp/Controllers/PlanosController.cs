@@ -4,11 +4,13 @@ using LocadoraDeCarros.Aplicacao.Servicos;
 using LocadoraDeCarros.Dominio.ModuloPlanos;
 using LocadoraDeCarros.WebApp.Extensions;
 using LocadoraDeCarros.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LocadoraDeCarros.WebApp.Controllers.Compartilhado;
 
+[Authorize (Roles = "Empresa")]
 public class PlanosController : WebControllerBase
 {
     private readonly PlanosService _repositorioPlanos;
@@ -48,6 +50,8 @@ public class PlanosController : WebControllerBase
         
         var novoPlano = _mapper.Map<Planos>(inserirPlanoViewModel);
 
+        novoPlano.UsuarioId = UsuarioId.GetValueOrDefault();
+        
         int grupoID = inserirPlanoViewModel.GrupoId;
         
         _repositorioPlanos.Inserir(novoPlano, grupoID);
