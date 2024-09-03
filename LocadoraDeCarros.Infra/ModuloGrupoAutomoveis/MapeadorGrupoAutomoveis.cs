@@ -17,5 +17,11 @@ public class MapeadorGrupoAutomoveis : IEntityTypeConfiguration<GrupoAutomoveis>
         builder.Property(g => g.Grupo)
             .IsRequired()
             .HasColumnType("varchar(100)");
+
+        builder.HasOne(g => g.Usuario)
+            .WithMany()
+            .HasForeignKey("UsuarioId")
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

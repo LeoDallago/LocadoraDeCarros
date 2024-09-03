@@ -6,6 +6,7 @@ using LocadoraDeCarros.Dominio.ModuloConfiguracoes;
 using LocadoraDeCarros.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Dominio.ModuloPlanos;
 using LocadoraDeCarros.Dominio.ModuloTaxa;
+using LocadoraDeCarros.Dominio.ModuloUsuario;
 using LocadoraDeCarros.Infra.ModuloAluguel;
 using LocadoraDeCarros.Infra.ModuloAutomovel;
 using LocadoraDeCarros.Infra.ModuloCliente;
@@ -14,12 +15,13 @@ using LocadoraDeCarros.Infra.ModuloConfiguracoes;
 using LocadoraDeCarros.Infra.ModuloGrupoAutomoveis;
 using LocadoraDeCarros.Infra.ModuloPlanos;
 using LocadoraDeCarros.Infra.ModuloTaxa;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace LocadoraDeCarros.Infra.Compartilhado;
 
-public class LocadoraDeCarrosDbContext : DbContext
+public class LocadoraDeCarrosDbContext : IdentityDbContext<Usuario, Perfil, int>
 {
     public DbSet<GrupoAutomoveis> grupoAutomoveis { get; set; }
 

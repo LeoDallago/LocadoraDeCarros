@@ -53,5 +53,11 @@ public class MapeadorAluguel : IEntityTypeConfiguration<Aluguel>
         builder.Property(a => a.ValorTotal)
             .IsRequired()
             .HasColumnType("decimal(18,2)");
+        
+        builder.HasOne(g => g.Usuario)
+            .WithMany()
+            .HasForeignKey("UsuarioId")
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

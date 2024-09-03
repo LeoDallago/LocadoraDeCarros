@@ -35,5 +35,11 @@ public class MapeadorPlanos : IEntityTypeConfiguration<Planos>
             .WithMany()
             .HasForeignKey(p => p.GrupoId)
             .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.HasOne(g => g.Usuario)
+            .WithMany()
+            .HasForeignKey("UsuarioId")
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

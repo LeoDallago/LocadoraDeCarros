@@ -23,8 +23,15 @@ public class MapeadorConfiguracoes : IEntityTypeConfiguration<Configuracoes>
         
         builder.Property(c => c.Alcool)
             .HasColumnType("decimal(18,2)");
-
-        builder.HasData(RegistrosPadrao());
+    
+        builder.HasOne(g => g.Usuario)
+            .WithMany()
+            .HasForeignKey("UsuarioId")
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Restrict);
+        
+       // builder.HasData(RegistrosPadrao());
+       //todo refazer insercao de dados
     }
 
     private object[] RegistrosPadrao()
