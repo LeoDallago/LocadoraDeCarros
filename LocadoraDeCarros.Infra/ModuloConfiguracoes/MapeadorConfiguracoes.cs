@@ -35,8 +35,8 @@ public class MapeadorConfiguracoes : IEntityTypeConfiguration<Configuracoes>
             .IsRequired()
             .OnDelete(DeleteBehavior.Restrict);
         
-       // builder.HasData(RegistrosPadrao());
-       //todo refazer insercao de dados
+        builder.HasData(RegistrosPadrao());
+       
     }
 
     private object[] RegistrosPadrao()
@@ -50,6 +50,7 @@ public class MapeadorConfiguracoes : IEntityTypeConfiguration<Configuracoes>
                 Gas = 1.0m,
                 Diesel = 1.0m,
                 Alcool = 1.0m,
+                UsuarioId = 1,
             }
         ];
     }

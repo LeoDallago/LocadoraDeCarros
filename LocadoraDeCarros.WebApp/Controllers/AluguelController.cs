@@ -212,7 +212,7 @@ public class AluguelController : WebControllerBase
             aluguel.Value.TaxaId);
         
         ApresentarMensagemSucesso("Calculo efetuado com sucesso!");
-       //todo refatorar e melhorar parte de calculo
+
         return RedirectToAction(nameof(Listar));
     }
 

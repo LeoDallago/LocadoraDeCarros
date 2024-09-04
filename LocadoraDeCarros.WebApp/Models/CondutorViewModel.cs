@@ -83,7 +83,7 @@ public class DetalhesCondutorViewModel
     
     public string CNH { get; set; }
     
-    public string Validade { get; set; }
-    
+    public DateTime Validade { get; set; }
+
     public int ClienteId { get; set; }
 }

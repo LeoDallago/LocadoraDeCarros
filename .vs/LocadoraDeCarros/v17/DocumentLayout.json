@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E2EF4F51-D956-4F55-B83F-127DA1733521}|LocadoraDeCarros.Dominio\\LocadoraDeCarros.Dominio.csproj|c:\\users\\leoda\\riderprojects\\locadoradecarros\\locadoradecarros.dominio\\moduloaluguel\\aluguel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2EF4F51-D956-4F55-B83F-127DA1733521}|LocadoraDeCarros.Dominio\\LocadoraDeCarros.Dominio.csproj|solutionrelative:locadoradecarros.dominio\\moduloaluguel\\aluguel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Aluguel.cs",
-              "DocumentMoniker": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
-              "RelativeDocumentMoniker": "LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
-              "ToolTip": "C:\\Users\\leoda\\RiderProjects\\LocadoraDeCarros\\LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
-              "RelativeToolTip": "LocadoraDeCarros.Dominio\\ModuloAluguel\\Aluguel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T12:29:50.124Z",
-              "EditorCaption": ""
             }
           ]
         }

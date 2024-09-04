@@ -38,7 +38,7 @@
                 <span class="text-danger fs-6" asp-validation-for="CNH"></span>
 
                 <label class="control-label fw-semibold">Validade:</label>
-                <input type="date" class="form-control" asp-for="Validade"/>
+                <input type="date" value="@DateTime.Now" class="form-control" asp-for="Validade"/>
                 <span class="text-danger fs-6" asp-validation-for="Validade"></span>
 
                 <button class="btn btn-dark col-3 mt-2">Inserir</button>
