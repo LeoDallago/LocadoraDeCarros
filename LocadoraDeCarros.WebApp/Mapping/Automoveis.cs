@@ -13,7 +13,9 @@ public class Automoveis : Profile
         CreateMap<EditarAutomovelViewModel, Automovel>()
             .ForMember(dest => dest.Foto, opt => opt.Ignore());
         CreateMap<Automovel, EditarAutomovelViewModel>();
-        CreateMap<Automovel, ListarAutomovelViewModel>();
-        CreateMap<Automovel, DetalhesAutomovelViewModel>();
+        CreateMap<Automovel, ListarAutomovelViewModel>()
+            .ForMember(dest => dest.Grupo, opt => opt.MapFrom(c => c.Grupo!.Grupo));
+        CreateMap<Automovel, DetalhesAutomovelViewModel>()
+            .ForMember(dest => dest.Grupo, opt => opt.MapFrom(c => c.Grupo!.Grupo));
     }
 }

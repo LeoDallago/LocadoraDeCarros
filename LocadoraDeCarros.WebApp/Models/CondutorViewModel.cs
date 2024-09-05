@@ -67,6 +67,8 @@ public class ListarCondutorViewModel
     public string Validade { get; set; }
     
     public int ClienteId { get; set; }
+    
+    public string Cliente { get; set; }
 }
 
 public class DetalhesCondutorViewModel
@@ -86,4 +88,6 @@ public class DetalhesCondutorViewModel
     public DateTime Validade { get; set; }
 
     public int ClienteId { get; set; }
+    
+    public string Cliente { get; set; }
 }

@@ -21,4 +21,18 @@ public class RepositorioCondutor : RepositorioBase<Condutor>,IRepositorioConduto
             Where(predicate).
             ToList();
     }
+    
+    public override Condutor? SelecionarPorId(int id)
+    {
+        return ObterRegistros()
+            .Include(c => c.Cliente)
+            .FirstOrDefault(c => c.Id == id);
+    }
+
+    public override List<Condutor> SelecionarTodos()
+    {
+        return ObterRegistros()
+            .Include(c => c.Cliente)
+            .ToList();
+    }
 }

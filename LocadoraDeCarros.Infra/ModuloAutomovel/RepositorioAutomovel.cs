@@ -21,4 +21,18 @@ public class RepositorioAutomovel : RepositorioBase<Automovel>,IRepositorioAutom
             .Where(predicate)
             .ToList();
     }
+    
+    public override Automovel? SelecionarPorId(int id)
+    {
+        return ObterRegistros()
+            .Include(c => c.Grupo)
+            .FirstOrDefault(c => c.Id == id);
+    }
+
+    public override List<Automovel> SelecionarTodos()
+    {
+        return ObterRegistros()
+            .Include(c => c.Grupo)
+            .ToList();
+    }
 }

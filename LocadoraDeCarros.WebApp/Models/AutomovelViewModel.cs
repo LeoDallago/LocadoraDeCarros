@@ -72,6 +72,8 @@ public class ListarAutomovelViewModel
     public string Ano { get; set; }
     
     public int GrupoId { get; set; }
+    
+    public string Grupo { get; set; }
 }
 
 public class DetalhesAutomovelViewModel
@@ -93,4 +95,6 @@ public class DetalhesAutomovelViewModel
     public string Ano { get; set; }
     
     public int GrupoId { get; set; }
+    
+    public string Grupo { get; set; }
 }
