@@ -19,6 +19,15 @@ Desenvolvido durante o curso Fullstack da [Academia do Programador](https://www.
 O objetivo é proporcionar uma gestão eficiente e uma experiência positiva tanto para os
  funcionários quanto para os clientes da locadora.
 
+ ## Stack
+ - .Net 8.0
+ - ASP.NET MVC
+ - Microsoft SQL Server
+ - Entity Framework
+ - Microsoft Identity
+ - AutoMapper
+ - FluentResults
+
  ## Requisitos
 
 - .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execução do projeto.
