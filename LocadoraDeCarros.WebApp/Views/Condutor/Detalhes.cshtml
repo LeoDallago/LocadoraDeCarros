@@ -14,7 +14,7 @@
             <div class="card-content">CPF: <strong>@Model.CPF</strong></div>
             <div class="card-content">CNH: <strong>@Model.CNH</strong></div>
             <div class="card-content">Validade: <strong>@Model.Validade.ToShortDateString()</strong></div>
-            <div class="card-content">Cliente: <strong>@Model.Cliente</strong></div>
+            <div class="card-content">Cliente: <strong>@Model.ClienteId</strong></div>
 
             <a class="btn btn-dark btn-sm mb-2 mt-2 fs-5" href="/condutor/editar/@Model.Id">Editar</a>
             <a class="btn btn-dark btn-sm mb-2 fs-5" href="/condutor/excluir/@Model.Id">Excluir</a>

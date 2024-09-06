@@ -90,11 +90,8 @@ public class ListarAluguelViewModel
     
     public int PlanoId { get; set; }
     
-    public string Plano { get; set; }
-    
     public int TaxaId { get; set; }
     
-    public string Taxa { get; set; }
     
     public bool Concluido { get; set; }
     
@@ -107,11 +104,9 @@ public class DetalhesAluguelViewModel
     
     public int CondutorId { get; set; }
     
-    public string Condutor { get; set; }
     
     public int AutomovelId { get; set; }
     
-    public string Automovel { get; set; }
     
     public DateTime DataSaida { get; set; }
     
@@ -119,11 +114,9 @@ public class DetalhesAluguelViewModel
     
     public int PlanoId { get; set; }
     
-    public string Plano { get; set; }
     
     public int TaxaId { get; set; }
     
-    public string Taxa { get; set; }
     
     public bool Concluido { get; set; }
     

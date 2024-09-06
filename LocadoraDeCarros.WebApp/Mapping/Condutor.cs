@@ -11,9 +11,7 @@ public class Condutor : Profile
         CreateMap<EditarCondutorViewModel, Dominio.ModuloCondutor.Condutor>();
 
         CreateMap<Dominio.ModuloCondutor.Condutor, EditarCondutorViewModel>();
-        CreateMap<Dominio.ModuloCondutor.Condutor, ListarCondutorViewModel>()
-            .ForMember(dest => dest.Cliente, opt => opt.MapFrom(c => c.Cliente!.Nome));
-        CreateMap<Dominio.ModuloCondutor.Condutor, DetalhesCondutorViewModel>()
-            .ForMember(dest => dest.Cliente, opt => opt.MapFrom(c => c.Cliente!.Nome));
+        CreateMap<Dominio.ModuloCondutor.Condutor, ListarCondutorViewModel>();
+        CreateMap<Dominio.ModuloCondutor.Condutor, DetalhesCondutorViewModel>();
     }
 }

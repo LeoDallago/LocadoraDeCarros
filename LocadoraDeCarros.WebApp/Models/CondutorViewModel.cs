@@ -68,7 +68,6 @@ public class ListarCondutorViewModel
     
     public int ClienteId { get; set; }
     
-    public string Cliente { get; set; }
 }
 
 public class DetalhesCondutorViewModel
@@ -89,5 +88,4 @@ public class DetalhesCondutorViewModel
 
     public int ClienteId { get; set; }
     
-    public string Cliente { get; set; }
 }
